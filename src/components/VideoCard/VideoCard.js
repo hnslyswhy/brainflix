@@ -10,7 +10,7 @@ function VideoCard(props) {
       />
       <div className="video-list-info">
         <p className="video-list-title">{props.video.title}</p>
-        <p className="video-list-channel">By {props.video.channel}</p>
+        <p className="video-list-channel">{props.video.channel}</p>
       </div>
     </article>
   );

@@ -2,8 +2,7 @@
 @use "../../styles/partials/variables";
 
 .main-comments {
-  padding: variables.$pm-base * 4;
-  padding-top: 0;
+  padding: 0 variables.$pm-base * 4;
 
   &-count {
     @include mixin.mobil-body-copy;

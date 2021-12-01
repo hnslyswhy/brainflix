@@ -1,0 +1,12 @@
+@use "../../styles/partials/variables";
+@use "../../styles/partials/mixin";
+
+.videos {
+  padding: variables.$pm-base * 4;
+
+  &-header {
+    @include mixin.mobil-body-copy;
+    color: variables.$s-mercury;
+    margin-bottom: variables.$pm-base * 2;
+  }
+}
