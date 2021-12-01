@@ -2,13 +2,23 @@
 @use "../../styles/partials/variables";
 
 .header {
+  width: 100%;
   @include mixin.flexbox(column, center, center);
   background-color: variables.$p-white;
   padding: variables.$pm-base * 4 0;
 
+  @include mixin.tablet {
+    padding: variables.$pm-base * 6 variables.$pm-base * 8;
+    @include mixin.flexbox(row, space-between, center);
+  }
+
   &-logo {
     max-width: 7.5rem;
     max-height: 1.5625rem;
+
+    @include mixin.tablet {
+      width: 20%;
+    }
   }
 
   &-functions {
@@ -16,9 +26,21 @@
     padding: 0 variables.$pm-base * 4;
     @include mixin.flexbox(row, space-between, center);
     flex-wrap: wrap;
+
+    @include mixin.tablet {
+      width: 68%;
+      padding: 0;
+      @include mixin.flexbox(row, space-between, center);
+    }
   }
 
   &-avatar {
     @include mixin.avatar;
+
+    @include mixin.tablet {
+      order: 2;
+      max-width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 }

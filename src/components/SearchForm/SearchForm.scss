@@ -7,6 +7,11 @@
   border-radius: 4px;
   margin: variables.$pm-base * 4 0;
 
+  @include mixin.tablet {
+    padding: variables.$pm-base;
+    margin: 0;
+  }
+
   &-input {
     border: none;
     background-color: variables.$p-white;

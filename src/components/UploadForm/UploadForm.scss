@@ -6,17 +6,27 @@
   background-color: variables.$p-blue;
   padding: variables.$pm-base * 2 0;
   border-radius: 4px;
-  text-align: center;
   position: relative;
+  @include mixin.flexbox(row, center, center);
+
+  @include mixin.tablet {
+    width: 30%;
+  }
+
+  &-input {
+    visibility: hidden;
+  }
 
   &-icon {
     position: absolute;
-    left: 0.25rem;
+    left: 1%;
     top: auto;
   }
 
   &-text {
     @include mixin.mobil-labels;
     color: variables.$p-white;
+    position: absolute;
+    left: 43%;
   }
 }
