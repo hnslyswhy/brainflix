@@ -1,7 +1,31 @@
 @use "../../styles/partials/mixin";
+@use "../../styles/partials/variables";
 
 .comments {
   &-avatar {
     @include mixin.avatar;
+  }
+
+  &-card {
+    @include mixin.flexbox(row, space-between, flex-start);
+    padding: variables.$pm-base * 4 0;
+    border-bottom: 1px solid variables.$s-mercury;
+  }
+
+  &-content {
+    @include mixin.mobil-body-copy;
+    margin-left: variables.$pm-base * 4;
+  }
+
+  &-header {
+    @include mixin.flexbox(row, space-between, center);
+  }
+
+  &-author {
+    font-weight: 700;
+  }
+
+  &-date {
+    color: variables.$p-silver;
   }
 }

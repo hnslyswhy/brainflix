@@ -1,7 +1,26 @@
 @use "../../styles/partials/mixin";
+@use "../../styles/partials/variables";
 
 .main-comments {
+  padding: variables.$pm-base * 4;
+  padding-top: 0;
+
+  &-count {
+    @include mixin.mobil-body-copy;
+    font-weight: 700;
+  }
+
+  &-container {
+    margin-top: variables.$pm-base * 4;
+    padding-bottom: variables.$pm-base * 4;
+    width: 100%;
+    @include mixin.flexbox(row, space-between, flex-start);
+    border-bottom: 1px solid variables.$s-mercury;
+  }
+
   &-avatar {
     @include mixin.avatar;
+    margin-top: variables.$pm-base * 6;
+    margin-right: variables.$pm-base * 4;
   }
 }

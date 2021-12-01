@@ -1,5 +1,6 @@
 import VideoDescription from "../VideoDescription/VideoDescription";
 import VideoComments from "../VideoComments/VideoComments";
+import "./MainVideo.scss";
 
 function MainVideo(props) {
   return (
@@ -11,7 +12,7 @@ function MainVideo(props) {
         </video>
       </section>
       <VideoDescription video={props.video} />
-      <VideoComments video={props.video} />
+      <VideoComments comments={props.video.comments} />
     </>
   );
 }

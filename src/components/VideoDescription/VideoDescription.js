@@ -1,5 +1,6 @@
 import views from "../../assets/icons/views.svg";
 import likes from "../../assets/icons/likes.svg";
+import "./VideoDescription.scss";
 
 function VideoDescription(props) {
   return (
@@ -12,13 +13,15 @@ function VideoDescription(props) {
           </p>
           <p className="main-description-info-time">{props.video.timestamp}</p>
         </div>
-        <div className="main-description-popularity">
-          <img src={views} alt="views" />
-          <span className="main-description-views">{props.video.views}</span>
-        </div>
-        <div>
-          <img src={likes} alt="likes" />
-          <span className="main-description-likes">{props.video.likes}</span>
+        <div className="main-description-social-container">
+          <div className="main-description-popularity">
+            <img src={views} alt="views" />
+            <span className="main-description-views">{props.video.views}</span>
+          </div>
+          <div>
+            <img src={likes} alt="likes" />
+            <span className="main-description-likes">{props.video.likes}</span>
+          </div>
         </div>
       </div>
       <p className="main-description-text">{props.video.description}</p>

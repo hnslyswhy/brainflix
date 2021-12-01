@@ -1,0 +1,49 @@
+@use "../../styles/partials/mixin";
+@use "../../styles/partials/variables";
+
+.main-description {
+  padding: variables.$pm-base * 4;
+  // padding-top: variables.$pm-base * 6;  //guidline does not match with mockup
+
+  &-title {
+  }
+
+  &-content {
+    @include mixin.flexbox(row, space-between, space-between);
+    margin: variables.$pm-base * 4 0;
+    padding-top: variables.$pm-base * 4;
+    padding-bottom: variables.$pm-base * 2;
+    border-top: 1px solid variables.$s-mercury;
+    border-bottom: 1px solid variables.$s-mercury;
+  }
+
+  &-info-channel {
+    @include mixin.mobil-body-copy;
+    font-weight: 700;
+    margin-bottom: variables.$pm-base * 2;
+  }
+
+  &-info-time {
+    @include mixin.mobil-body-copy;
+    color: variables.$p-silver;
+  }
+
+  &-social-container {
+    padding-right: variables.$pm-base * 12;
+  }
+
+  &-popularity {
+    margin-bottom: variables.$pm-base * 2;
+  }
+
+  &-views,
+  &-likes {
+    @include mixin.mobil-body-copy;
+    margin-left: variables.$pm-base * 2;
+    color: variables.$p-silver;
+  }
+
+  &-text {
+    @include mixin.mobil-body-copy;
+  }
+}

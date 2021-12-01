@@ -1,1 +1,18 @@
-// https://usefulangle.com/post/142/css-video-aspect-ratio
+// @use "../../styles/partials/variables";
+// @use "../../styles/partials/mixin";
+
+// to get 16:9 ratio, use padding on parent to match the percentage & position trick
+.main-video {
+  width: 100%;
+  padding-top: 56.25%;
+  height: 0px;
+  position: relative;
+
+  &-player {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

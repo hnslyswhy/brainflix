@@ -1,11 +1,16 @@
 import add from "../../assets/icons/add_comment.svg";
+import "./CommentForm.scss";
 
 function CommentForm() {
   return (
-    <form>
-      <div>
-        <label htmlFor="comment">JOIN THE CONVERSATION</label>
+    <form className="comment-form">
+      <div className="comment-form-container">
+        <label className="comment-form-label" htmlFor="comment">
+          JOIN THE CONVERSATION
+        </label>
         <input
+          className="comment-form-input"
+          id="comment"
           type="text"
           name="comment"
           placeholder="Add a new comment"
@@ -13,9 +18,9 @@ function CommentForm() {
           required
         />
       </div>
-      <button type="submit">
-        <img src={add} alt="add comment" />
-        <span>COMMENT</span>
+      <button className="comment-form-btn" type="submit">
+        <img className="comment-form-icon" src={add} alt="add comment" />
+        COMMENT
       </button>
     </form>
   );

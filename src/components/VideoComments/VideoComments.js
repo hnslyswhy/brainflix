@@ -6,14 +6,12 @@ import "./VideoComments.scss";
 function VideoComments(props) {
   return (
     <section className="main-comments">
-      <p className="main-comments-count">
-        {props.video.comments.length} Comments
-      </p>
+      <p className="main-comments-count">{props.comments.length} Comments</p>
       <div className="main-comments-container">
         <img className="main-comments-avatar" src={avatar} alt="avatar" />
         <CommentForm />
       </div>
-      <Comments />
+      <Comments videoList={props.comments} />
     </section>
   );
 }

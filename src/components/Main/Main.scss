@@ -1,0 +1,11 @@
+@use "../../styles/partials/variables";
+@use "../../styles/partials/mixin";
+
+.main {
+  @include mixin.flexbox(column, center, center);
+  width: 100%;
+
+  &-videoList {
+    width: 100%;
+  }
+}
