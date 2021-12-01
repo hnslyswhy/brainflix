@@ -1,3 +1,5 @@
+@use "./variables";
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -5,6 +7,7 @@
 
 body {
   font-family: "Avenir", serif;
+  color: variables.$p-black;
 }
 
 a {

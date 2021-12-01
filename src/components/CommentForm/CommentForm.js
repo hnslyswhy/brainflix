@@ -9,7 +9,7 @@ function CommentForm() {
           type="text"
           name="comment"
           placeholder="Add a new comment"
-          minlength="6"
+          minLength="6"
           required
         />
       </div>

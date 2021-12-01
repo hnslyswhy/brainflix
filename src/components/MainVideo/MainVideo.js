@@ -1,19 +1,19 @@
 import VideoDescription from "../VideoDescription/VideoDescription";
 import VideoComments from "../VideoComments/VideoComments";
 
-function Video(props) {
+function MainVideo(props) {
   return (
     <>
-      <div>
-        <video controls width="250px">
+      <section className="main-video">
+        <video className="main-video-player" controls width="250px">
           <source src={props.video} type="video/mp4"></source>
           Sorry, your browser doesn't support embedded videos.
         </video>
-      </div>
-      <VideoDescription />
-      <VideoComments />
+      </section>
+      <VideoDescription video={props.video} />
+      <VideoComments video={props.video} />
     </>
   );
 }
 
-export default Video;
+export default MainVideo;

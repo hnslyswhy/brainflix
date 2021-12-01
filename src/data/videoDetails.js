@@ -310,3 +310,5 @@ const videoDetails = [
     id: "76ca28c0-7dea-4553-887f-8e5129a80fc3",
   },
 ];
+
+export default videoDetails;

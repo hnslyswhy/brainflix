@@ -1,3 +1,5 @@
+import "./Comment.scss";
+
 function Comments() {
   let fakeData = {
     title: "BMX Rampage: 2021 Highlights",
@@ -37,11 +39,15 @@ function Comments() {
   };
 
   return (
-    <div>
+    <div className="comments">
       {fakeData.comments.map((item) => {
         return (
-          <article>
-            <img src="https://via.placeholder.com/150" alt="avatar" />
+          <article className="comments-card">
+            <img
+              className="comments-avatar"
+              src="https://via.placeholder.com/150"
+              alt="avatar"
+            />
             <div>
               <div>
                 <p>{item.name}</p>

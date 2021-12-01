@@ -1,0 +1,24 @@
+@use "../../styles/partials/mixin";
+@use "../../styles/partials/variables";
+
+.header {
+  @include mixin.flexbox(column, center, center);
+  background-color: variables.$p-white;
+  padding: variables.$pm-base * 4 0;
+
+  &-logo {
+    max-width: 7.5rem;
+    max-height: 1.5625rem;
+  }
+
+  &-functions {
+    width: 100%;
+    padding: 0 variables.$pm-base * 4;
+    @include mixin.flexbox(row, space-between, center);
+    flex-wrap: wrap;
+  }
+
+  &-avatar {
+    @include mixin.avatar;
+  }
+}

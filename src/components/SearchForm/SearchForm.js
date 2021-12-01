@@ -1,11 +1,19 @@
+import "./SearchForm.scss";
+import searchIcon from "../../assets/icons/search.svg";
+
 function SearchForm() {
   return (
-    <form className="searchForm">
-      <div>
-        <input className="searchForm-input" name="search" type="text" />
-        <button className="searchForm-btn" type="submit"></button>
-      </div>
-    </form>
+    <div className="search-form">
+      <button className="search-form-btn" type="submit">
+        <img src={searchIcon} alt="search icon" />
+      </button>
+      <input
+        className="search-form-input"
+        name="search"
+        type="text"
+        placeholder="Search"
+      />
+    </div>
   );
 }
 
