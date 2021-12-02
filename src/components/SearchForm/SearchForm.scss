@@ -2,19 +2,15 @@
 @use "../../styles/partials/mixin";
 
 .search-form {
-  padding: variables.$pm-base variables.$pm-base * 2;
   border: 1px solid variables.$s-mercury;
   border-radius: 4px;
   margin: variables.$pm-base * 4 0;
 
   @include mixin.tablet {
-    padding: variables.$pm-base;
-    margin: 0;
   }
 
   &-input {
     border: none;
-    background-color: variables.$p-white;
     width: 85%;
     padding-left: variables.$pm-base * 2;
     padding-right: variables.$pm-base * 12;
