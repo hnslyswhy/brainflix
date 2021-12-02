@@ -9,6 +9,11 @@
     width: 50%;
   }
 
+  @include mixin.desktop {
+    width: 34%;
+    border-left: 1px solid variables.$s-mercury;
+  }
+
   &-header {
     @include mixin.section-header;
     color: variables.$s-mercury;

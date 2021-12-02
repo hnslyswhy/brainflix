@@ -9,6 +9,11 @@
     @include mixin.body-copy;
     padding: 0 variables.$pm-base * 8;
     padding-top: variables.$pm-base * 2;
+    padding-left: variables.$pm-base * 32;
+  }
+
+  @include mixin.desktop {
+    padding-right: 0;
   }
 
   &-count {
@@ -25,12 +30,16 @@
     padding-bottom: variables.$pm-base * 4;
     width: 100%;
     @include mixin.flexbox(row, space-between, flex-start);
-    border-bottom: 1px solid variables.$s-mercury;
 
     @include mixin.tablet {
       padding-bottom: variables.$pm-base * 6;
     }
+
+    @include mixin.desktop {
+      margin-left: variables.$pm-base * 4;
+    }
   }
+
   &-avatar {
     @include mixin.avatar;
     margin-top: variables.$pm-base * 6;
@@ -40,6 +49,10 @@
       margin-right: variables.$pm-base * 6;
       max-width: 2.5rem;
       max-height: 2.5rem;
+    }
+
+    @include mixin.desktop {
+      margin-right: variables.$pm-base * 8;
     }
   }
 }

@@ -9,6 +9,12 @@
     padding-top: variables.$pm-base * 6;
   }
 
+  @include mixin.desktop {
+    padding-top: variables.$pm-base * 9;
+    padding-left: variables.$pm-base * 32;
+    padding-right: 0;
+  }
+
   &-title {
     @include mixin.tablet {
       @include mixin.page-header;
@@ -58,6 +64,9 @@
       padding-right: 0;
       @include mixin.flexbox(row, space-between, center);
     }
+    @include mixin.desktop {
+      margin-right: variables.$pm-base * 4;
+    }
   }
 
   &-popularity {
@@ -80,6 +89,10 @@
     @include mixin.tablet {
       @include mixin.body-copy;
       margin-top: variables.$pm-base * 6;
+    }
+
+    @include mixin.desktop {
+      margin-right: variables.$pm-base * 4;
     }
   }
 }

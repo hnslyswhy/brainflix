@@ -4,16 +4,10 @@ import "./MainVideo.scss";
 
 function MainVideo(props) {
   return (
-    <>
-      <section className="main-video">
-        <video className="main-video-player" controls width="250px">
-          <source src={props.video.video} type="video/mp4"></source>
-          Sorry, your browser doesn't support embedded videos.
-        </video>
-      </section>
+    <div className="main-video">
       <VideoDescription video={props.video} />
       <VideoComments comments={props.video.comments} />
-    </>
+    </div>
   );
 }
 

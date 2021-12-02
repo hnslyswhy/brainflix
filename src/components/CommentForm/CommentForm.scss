@@ -9,6 +9,10 @@
     @include mixin.flexbox(row, space-between, flex-end);
   }
 
+  @include mixin.desktop {
+    justify-content: flex-start;
+  }
+
   &-container {
     width: 100%;
     @include mixin.mobil-body-copy;
@@ -16,6 +20,10 @@
     @include mixin.tablet {
       width: 70%;
       @include mixin.body-copy;
+    }
+
+    @include mixin.desktop {
+      width: 65%;
     }
   }
 
@@ -56,6 +64,10 @@
 
     @include mixin.tablet {
       width: 25%;
+    }
+
+    @include mixin.desktop {
+      margin-left: variables.$pm-base * 6;
     }
   }
 }
