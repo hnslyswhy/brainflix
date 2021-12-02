@@ -4,16 +4,30 @@
 .video-list {
   @include mixin.flexbox(row, space-between, flex-start);
   padding-top: variables.$pm-base * 2.5;
+  border-radius: 4px;
+
+  @include mixin.tablet {
+    padding-top: variables.$pm-base * 6;
+  }
 
   &-image {
     width: 33%;
     height: 18vw;
-    min-width: 100px;
-    max-width: 155px;
-    min-height: 60px;
-    max-height: 92px;
+    min-width: 6.25rem;
+    max-width: 9.7rem;
+    min-height: 3.75rem;
+    max-height: 5.75rem;
     object-fit: cover;
     border-radius: 4px;
+
+    @include mixin.tablet {
+      width: 40%;
+      height: 8.5vw;
+      min-width: 110px;
+      max-width: 220x;
+      min-height: 60px;
+      max-height: 80px;
+    }
   }
 
   &-info {
@@ -21,10 +35,18 @@
     @include mixin.mobil-body-copy;
     @include mixin.flexbox(column, flex-start, space-between);
     margin-left: variables.$pm-base * 4;
+
+    @include mixin.tablet {
+      @include mixin.body-copy;
+    }
   }
 
   &-title {
     font-weight: 700;
     margin-bottom: variables.$pm-base * 2;
+
+    @include mixin.tablet {
+      margin-bottom: 0;
+    }
   }
 }

@@ -20,7 +20,7 @@
   }
 
   &-label {
-    @include mixin.mobil-section-header;
+    @include mixin.section-header;
     color: variables.$p-silver;
   }
 

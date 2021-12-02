@@ -4,8 +4,13 @@
 .videos {
   padding: variables.$pm-base * 4;
 
+  @include mixin.tablet {
+    padding: variables.$pm-base * 6 variables.$pm-base * 8;
+    width: 50%;
+  }
+
   &-header {
-    @include mixin.mobil-body-copy;
+    @include mixin.section-header;
     color: variables.$s-mercury;
     margin-bottom: variables.$pm-base * 2;
   }
