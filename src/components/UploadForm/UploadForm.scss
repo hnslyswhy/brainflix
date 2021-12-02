@@ -24,9 +24,13 @@
   }
 
   &-text {
-    @include mixin.mobil-labels;
+    @include mixin.labels;
     color: variables.$p-white;
     position: absolute;
     left: 43%;
+
+    @include mixin.tablet {
+      left: 35%;
+    }
   }
 }

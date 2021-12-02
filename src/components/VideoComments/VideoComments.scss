@@ -3,10 +3,21 @@
 
 .main-comments {
   padding: 0 variables.$pm-base * 4;
+  @include mixin.mobil-body-copy;
+
+  @include mixin.tablet {
+    @include mixin.body-copy;
+    padding: 0 variables.$pm-base * 8;
+    padding-top: variables.$pm-base * 2;
+  }
 
   &-count {
-    @include mixin.mobil-body-copy;
     font-weight: 700;
+    @include mixin.mobil-subheader;
+
+    @include mixin.tablet {
+      @include mixin.subheader;
+    }
   }
 
   &-container {
@@ -15,11 +26,20 @@
     width: 100%;
     @include mixin.flexbox(row, space-between, flex-start);
     border-bottom: 1px solid variables.$s-mercury;
-  }
 
+    @include mixin.tablet {
+      padding-bottom: variables.$pm-base * 6;
+    }
+  }
   &-avatar {
     @include mixin.avatar;
     margin-top: variables.$pm-base * 6;
     margin-right: variables.$pm-base * 4;
+
+    @include mixin.tablet {
+      margin-right: variables.$pm-base * 6;
+      max-width: 2.5rem;
+      max-height: 2.5rem;
+    }
   }
 }

@@ -22,7 +22,7 @@
     &::placeholder {
       font-family: "Avenir";
       color: variables.$p-black;
-      @include mixin.mobil-labels;
+      @include mixin.labels;
     }
   }
 

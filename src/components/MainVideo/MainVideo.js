@@ -7,7 +7,7 @@ function MainVideo(props) {
     <>
       <section className="main-video">
         <video className="main-video-player" controls width="250px">
-          <source src={props.video} type="video/mp4"></source>
+          <source src={props.video.video} type="video/mp4"></source>
           Sorry, your browser doesn't support embedded videos.
         </video>
       </section>

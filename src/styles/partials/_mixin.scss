@@ -12,8 +12,10 @@
 }
 
 @mixin avatar {
+  width: 15%;
+  height: 15vw;
   max-width: 2.25rem;
-  height: 2.25rem;
+  max-height: 2.25rem;
   border-radius: 50%;
 }
 
@@ -71,12 +73,6 @@
   font-weight: 400;
   line-height: 1.125rem;
   font-size: 0.8125rem;
-}
-
-@mixin mobil-labels {
-  font-weight: 700;
-  line-height: 1.25rem;
-  font-size: 0.75rem;
 }
 
 // responsive

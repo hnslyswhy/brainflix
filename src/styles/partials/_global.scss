@@ -1,4 +1,5 @@
 @use "./variables";
+@use "./mixin";
 
 * {
   margin: 0;
@@ -12,4 +13,35 @@ body {
 
 a {
   text-decoration: none;
+}
+
+button {
+  height: 2.5rem;
+  padding: 0 variables.$pm-base * 8;
+  border-radius: 4px;
+  border: none;
+  background-color: variables.$p-blue;
+  @include mixin.labels;
+
+  &:hover {
+    cursor: pointer;
+    background-color: variables.$s-d-blue;
+  }
+}
+
+input {
+  border-radius: 4px;
+  border: 1px solid variables.$s-mercury;
+  min-width: 15rem;
+  padding: 0.75rem;
+
+  &:focus {
+    outline: none;
+    border: 2px solid variables.$p-blue;
+  }
+
+  &:focus:invalid {
+    outline: none;
+    border: 1px solid #d22d2d;
+  }
 }

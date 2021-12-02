@@ -4,8 +4,15 @@
 .main-description {
   padding: variables.$pm-base * 4;
   // padding-top: variables.$pm-base * 6;  //guidline does not match with mockup
+  @include mixin.tablet {
+    padding: variables.$pm-base * 8;
+    padding-top: variables.$pm-base * 6;
+  }
 
   &-title {
+    @include mixin.tablet {
+      @include mixin.page-header;
+    }
   }
 
   &-content {
@@ -15,35 +22,64 @@
     padding-bottom: variables.$pm-base * 2;
     border-top: 1px solid variables.$s-mercury;
     border-bottom: 1px solid variables.$s-mercury;
+    @include mixin.mobil-body-copy;
+
+    @include mixin.tablet {
+      margin: 0;
+      padding-top: variables.$pm-base * 2;
+      @include mixin.body-copy;
+      border-top: none;
+    }
+  }
+
+  &-info-container {
+    @include mixin.tablet {
+      @include mixin.flexbox(row, space-between, center);
+    }
   }
 
   &-info-channel {
-    @include mixin.mobil-body-copy;
     font-weight: 700;
     margin-bottom: variables.$pm-base * 2;
+
+    @include mixin.tablet {
+      margin: 0;
+      margin-right: variables.$pm-base * 12;
+    }
   }
 
   &-info-time {
-    @include mixin.mobil-body-copy;
     color: variables.$p-silver;
   }
 
   &-social-container {
     padding-right: variables.$pm-base * 12;
+    @include mixin.tablet {
+      padding-right: 0;
+      @include mixin.flexbox(row, space-between, center);
+    }
   }
 
   &-popularity {
     margin-bottom: variables.$pm-base * 2;
+    @include mixin.tablet {
+      margin-bottom: 0;
+      margin-right: variables.$pm-base * 4;
+    }
   }
 
   &-views,
   &-likes {
-    @include mixin.mobil-body-copy;
     margin-left: variables.$pm-base * 2;
     color: variables.$p-silver;
   }
 
   &-text {
     @include mixin.mobil-body-copy;
+
+    @include mixin.tablet {
+      @include mixin.body-copy;
+      margin-top: variables.$pm-base * 6;
+    }
   }
 }

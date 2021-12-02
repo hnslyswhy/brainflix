@@ -19,7 +19,6 @@ function CommentForm() {
         />
       </div>
       <button className="comment-form-btn" type="submit">
-        <img className="comment-form-icon" src={add} alt="add comment" />
         COMMENT
       </button>
     </form>
