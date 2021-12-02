@@ -5,7 +5,7 @@ function Comments(props) {
     <div className="comments">
       {props.videoList.map((item) => {
         return (
-          <article className="comments-card">
+          <article className="comments-card" key={item.name}>
             <img
               className="comments-avatar"
               src="https://via.placeholder.com/150"

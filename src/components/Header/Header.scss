@@ -12,6 +12,10 @@
     @include mixin.flexbox(row, space-between, center);
   }
 
+  @include mixin.desktop {
+    padding: variables.$pm-base * 6 variables.$pm-base * 32;
+  }
+
   &-logo {
     max-width: 7.5rem;
     max-height: 1.5625rem;
@@ -32,6 +36,10 @@
       width: 68%;
       padding: 0;
       @include mixin.flexbox(row, space-between, center);
+    }
+
+    @include mixin.desktop {
+      width: 50%;
     }
   }
 
@@ -74,8 +82,8 @@
 
     @include mixin.tablet {
       order: 2;
-      width: 2.5rem;
-      height: 2.5rem;
+      max-width: 2.5rem;
+      max-height: 2.5rem;
     }
   }
 
