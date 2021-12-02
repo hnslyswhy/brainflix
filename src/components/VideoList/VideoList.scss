@@ -11,6 +11,8 @@
 
   @include mixin.desktop {
     width: 34%;
+    padding-top: variables.$pm-base * 8;
+    padding-left: variables.$pm-base * 6;
     border-left: 1px solid variables.$s-mercury;
   }
 
@@ -18,5 +20,9 @@
     @include mixin.section-header;
     color: variables.$s-mercury;
     margin-bottom: variables.$pm-base * 2;
+
+    @include mixin.desktop {
+      margin-bottom: 0;
+    }
   }
 }
