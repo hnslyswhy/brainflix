@@ -61,6 +61,10 @@
   &-social-container {
     padding-right: variables.$pm-base * 12;
 
+    & img {
+      vertical-align: middle;
+    }
+
     @include mixin.tablet {
       padding-right: 0;
       @include mixin.flexbox(row, space-between, center);

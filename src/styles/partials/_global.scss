@@ -44,6 +44,11 @@ input {
     padding: 1rem;
   }
 
+  &::placeholder {
+    @include mixin.mobil-body-copy;
+    color: variables.$p-silver;
+  }
+
   &:focus {
     outline: none;
     border: 2px solid variables.$p-blue;
@@ -53,8 +58,4 @@ input {
     outline: none;
     border: 1px solid #d22d2d;
   }
-}
-
-img {
-  background-color: variables.$s-mercury;
 }
