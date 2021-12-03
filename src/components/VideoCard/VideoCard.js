@@ -2,7 +2,10 @@ import "./VideoCard.scss";
 
 function VideoCard(props) {
   return (
-    <article className="video-list">
+    <article
+      className="video-list"
+      onClick={() => props.onClick(props.video.id)}
+    >
       <img
         className="video-list-image"
         src={props.video.image}

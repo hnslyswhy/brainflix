@@ -1,11 +1,20 @@
 import { Component } from "react";
 import MainVideo from "../MainVideo/MainVideo";
 import VideoList from "../VideoList/VideoList";
-import videoData from "../../data/video-details.json";
+import videoDataDetails from "../../data/video-details.json";
+import videoData from "../../data/videos.json";
 import "./Main.scss";
 
 class Main extends Component {
-  state = { data: videoData };
+  state = {
+    videoList: videoData,
+    selectedVideo: videoDataDetails[0],
+  };
+
+  handlerSelectVideo = (id) => {
+    let newVideo = videoDataDetails.find((item) => item.id === id);
+    this.setState({ selectedVideo: newVideo });
+  };
 
   render() {
     return (
@@ -13,7 +22,7 @@ class Main extends Component {
         <section className="main-video-section">
           <video
             className="main-video-player"
-            src={this.state.data[0].video}
+            src={this.state.selectedVideo.video}
             type="video/mp4"
             controls="controls"
           >
@@ -22,11 +31,12 @@ class Main extends Component {
         </section>
         <MainVideo
           className="main-video-description"
-          video={this.state.data[0]}
+          video={this.state.selectedVideo}
         />
         <VideoList
           className="main-videolist"
-          videos={this.state.data.slice(1)}
+          videos={this.state.videoList.slice(1)}
+          handlerSelectVideo={this.handlerSelectVideo}
         />
       </main>
     );
