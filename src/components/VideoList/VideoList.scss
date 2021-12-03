@@ -19,7 +19,7 @@
 
   &-header {
     @include mixin.section-header;
-    color: variables.$s-mercury;
+    color: variables.$p-silver;
     margin-bottom: variables.$pm-base * 2;
 
     @include mixin.desktop {

@@ -17,7 +17,9 @@ export function getTimeDifference(num) {
   );
   if (differenceInDays < 1) {
     return "today";
+  } else if (differenceInDays === 1) {
+    return "1 day ago";
   } else {
-    return ` (${differenceInDays} days)`;
+    return ` ${differenceInDays} days ago`;
   }
 }

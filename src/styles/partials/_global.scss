@@ -9,6 +9,7 @@
 body {
   font-family: "Avenir", serif;
   color: variables.$p-black;
+  background-color: variables.$p-white;
 }
 
 a {
@@ -34,7 +35,14 @@ input {
   border: 1px solid variables.$s-mercury;
   background-color: variables.$s-alabaster;
   min-width: 15rem;
+  max-width: 100%;
+  min-height: 2.25rem;
   padding: 0.75rem;
+
+  @include mixin.tablet {
+    min-height: 2.5rem;
+    padding: 1rem;
+  }
 
   &:focus {
     outline: none;
@@ -45,4 +53,8 @@ input {
     outline: none;
     border: 1px solid #d22d2d;
   }
+}
+
+img {
+  background-color: variables.$s-mercury;
 }

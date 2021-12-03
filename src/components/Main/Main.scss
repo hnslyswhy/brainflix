@@ -29,7 +29,19 @@
   }
 
   &-video-player {
-    margin: 0 auto;
-    @include mixin.flexbox(row, center, center);
+    width: 100%;
+    height: 56.25vw;
+
+    @include mixin.tablet {
+      width: 90vw;
+      height: 50.625vw;
+      margin: 0 auto;
+      @include mixin.flexbox(row, center, center);
+    }
+
+    @include mixin.desktop {
+      width: 65vw;
+      height: 36.5625vw;
+    }
   }
 }

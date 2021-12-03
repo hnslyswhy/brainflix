@@ -18,7 +18,8 @@
     }
   }
 
-  &-image {
+  &-image-container {
+    background-color: variables.$s-mercury;
     width: 33%;
     height: 18vw;
     min-width: 6.25rem;
@@ -34,7 +35,7 @@
       min-width: 110px;
       max-width: 220x;
       min-height: 60px;
-      max-height: 80px;
+      max-height: 100px;
     }
 
     @include mixin.desktop {
@@ -45,6 +46,12 @@
       min-height: 65px;
       max-height: 100px;
     }
+  }
+
+  &-image {
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
   }
 
   &-info {

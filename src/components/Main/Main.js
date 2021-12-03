@@ -9,11 +9,16 @@ class Main extends Component {
   state = {
     videoList: videoData,
     selectedVideo: videoDataDetails[0],
+    filteredList: videoData.slice(1),
   };
 
-  handlerSelectVideo = (id) => {
-    let newVideo = videoDataDetails.find((item) => item.id === id);
-    this.setState({ selectedVideo: newVideo });
+  handlerSelectVideo = (videoId) => {
+    this.setState({
+      selectedVideo: videoDataDetails.find((item) => item.id === videoId),
+    });
+    this.setState({
+      filteredList: videoData.filter((item) => item.id !== videoId),
+    });
   };
 
   render() {
@@ -35,7 +40,7 @@ class Main extends Component {
         />
         <VideoList
           className="main-videolist"
-          videos={this.state.videoList.slice(1)}
+          videos={this.state.filteredList}
           handlerSelectVideo={this.handlerSelectVideo}
         />
       </main>

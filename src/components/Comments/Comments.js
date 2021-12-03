@@ -1,5 +1,5 @@
 import "./Comment.scss";
-import { createDate, getTimeDifference } from "../timeConverter";
+import { getTimeDifference } from "../timeConverter";
 
 function Comments(props) {
   console.log(props.videoList[0].timestamp);
@@ -17,8 +17,7 @@ function Comments(props) {
               <div className="comments-header">
                 <p className="comments-author">{item.name}</p>
                 <p className="comments-date">
-                  {createDate(item.timestamp) +
-                    getTimeDifference(item.timestamp)}
+                  {getTimeDifference(item.timestamp)}
                 </p>
               </div>
               <p className="comments-text">{item.comment}</p>
