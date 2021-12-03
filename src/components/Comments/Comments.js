@@ -1,6 +1,8 @@
 import "./Comment.scss";
+import { createDate, getTimeDifference } from "../timeConverter";
 
 function Comments(props) {
+  console.log(props.videoList[0].timestamp);
   return (
     <div className="comments">
       {props.videoList.map((item) => {
@@ -14,7 +16,10 @@ function Comments(props) {
             <div className="comments-content">
               <div className="comments-header">
                 <p className="comments-author">{item.name}</p>
-                <p className="comments-date">{item.timestamp}</p>
+                <p className="comments-date">
+                  {createDate(item.timestamp) +
+                    getTimeDifference(item.timestamp)}
+                </p>
               </div>
               <p className="comments-text">{item.comment}</p>
             </div>

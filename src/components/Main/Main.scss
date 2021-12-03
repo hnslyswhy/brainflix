@@ -22,4 +22,14 @@
       width: 35%;
     }
   }
+
+  &-video-section {
+    width: 100%;
+    background-color: variables.$s-d-black;
+  }
+
+  &-video-player {
+    margin: 0 auto;
+    @include mixin.flexbox(row, center, center);
+  }
 }

@@ -8,12 +8,12 @@
   padding: variables.$pm-base * 4 0;
 
   @include mixin.tablet {
-    padding: variables.$pm-base * 6 variables.$pm-base * 8;
+    padding: variables.$pm-base * 4 variables.$pm-base * 8;
     @include mixin.flexbox(row, space-between, center);
   }
 
   @include mixin.desktop {
-    padding: variables.$pm-base * 6 variables.$pm-base * 32;
+    padding: variables.$pm-base * 4 variables.$pm-base * 32;
   }
 
   &-logo {

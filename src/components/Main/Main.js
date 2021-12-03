@@ -11,8 +11,12 @@ class Main extends Component {
     return (
       <main className="main">
         <section className="main-video-section">
-          <video className="main-video-player" controls width="250px">
-            <source src={this.state.data[0].video} type="video/mp4"></source>
+          <video
+            className="main-video-player"
+            src={this.state.data[0].video}
+            type="video/mp4"
+            controls="controls"
+          >
             Sorry, your browser doesn't support embedded videos.
           </video>
         </section>

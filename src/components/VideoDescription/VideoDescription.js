@@ -1,6 +1,7 @@
 import views from "../../assets/icons/views.svg";
 import likes from "../../assets/icons/likes.svg";
 import "./VideoDescription.scss";
+import { createDate } from "../timeConverter";
 
 function VideoDescription(props) {
   return (
@@ -11,7 +12,9 @@ function VideoDescription(props) {
           <p className="main-description-info-channel">
             By {props.video.channel}
           </p>
-          <p className="main-description-info-time">{props.video.timestamp}</p>
+          <p className="main-description-info-time">
+            {createDate(props.video.timestamp)}
+          </p>
         </div>
         <div className="main-description-social-container">
           <div className="main-description-popularity">

@@ -8,12 +8,12 @@
   @include mixin.tablet {
     @include mixin.body-copy;
     padding: 0 variables.$pm-base * 8;
-    padding-top: variables.$pm-base * 2;
-    padding-left: variables.$pm-base * 32;
   }
 
   @include mixin.desktop {
     padding-right: 0;
+    padding-top: variables.$pm-base * 2;
+    padding-left: variables.$pm-base * 32;
   }
 
   &-count {

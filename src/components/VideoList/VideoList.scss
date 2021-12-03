@@ -3,6 +3,7 @@
 
 .videos {
   padding: variables.$pm-base * 4;
+  margin-right: auto;
 
   @include mixin.tablet {
     padding: variables.$pm-base * 6 variables.$pm-base * 8;
