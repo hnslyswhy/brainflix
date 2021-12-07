@@ -9,39 +9,68 @@
     padding: variables.$pm-base * 8;
   }
 
+  @include mixin.desktop {
+    padding: variables.$pm-base * 8 variables.$pm-base * 32;
+  }
+
   &-headline {
     @include mixin.mobil-page-header;
-    margin-bottom: variables.$pm-base * 6;
+    margin-bottom: variables.$pm-base * 4;
 
     @include mixin.tablet {
       @include mixin.page-header;
+      margin-bottom: variables.$pm-base * 6;
     }
   }
 
   &-form {
-    @include mixin.flexbox(column, flex-start, flex-start);
-    @include mixin.tablet {
-      border-top: 1px solid variables.$s-mercury;
+    &-box {
+      width: 100%;
+      @include mixin.flexbox(column, flex-start, flex-start);
+
+      @include mixin.tablet {
+        padding-top: variables.$pm-base * 6;
+        border-top: 1px solid variables.$s-mercury;
+        border-bottom: 1px solid variables.$s-mercury;
+      }
+      @include mixin.desktop {
+        @include mixin.flexbox(row, space-between, flex-start);
+        flex-wrap: wrap;
+        //     border-top: 1px solid variables.$s-mercury;
+      }
+    }
+
+    &-video {
+      width: 100%;
+      @include mixin.desktop {
+        width: 32%;
+      }
     }
 
     &-file {
       width: 100%;
-      height: 56vw;
-      max-height: 12.5rem;
+      height: 55vw;
+      max-height: 12rem;
       min-height: 6rem;
       background-image: url("../../../assets/images/Upload-video-preview.jpg");
-      background-position: 0 1.25rem;
+      background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       border-radius: 4px;
 
       @include mixin.tablet {
         width: 50%;
-        height: 25vw;
-        min-height: 14rem;
+        height: 20vw;
+        min-height: 12rem;
         max-height: 18rem;
-        margin-top: variables.$pm-base * 6;
-        background-position: 0 1.875rem;
+        margin-top: variables.$pm-base;
+      }
+
+      @include mixin.desktop {
+        width: 100%;
+        height: 13vw;
+        min-height: 11.3rem;
+        max-height: 20rem;
       }
 
       & #file {
@@ -53,22 +82,37 @@
       @include mixin.tablet {
         width: 100%;
       }
+
+      @include mixin.desktop {
+        width: 65.5%;
+        margin-left: variables.$pm-base * 6;
+      }
     }
 
     &-section {
       margin-top: variables.$pm-base * 4;
+      @include mixin.desktop {
+        margin-top: 0;
+      }
 
       &:last-of-type {
         @include mixin.tablet {
           margin-top: variables.$pm-base * 2;
           padding-bottom: variables.$pm-base * 4;
-          border-bottom: 1px solid variables.$s-mercury;
+        }
+        @include mixin.desktop {
+          margin-top: variables.$pm-base * 4;
         }
       }
     }
 
     & #title {
       width: 100%;
+      margin-top: variables.$pm-base;
+      &::placeholder {
+        @include mixin.mobil-body-copy;
+        color: variables.$p-black;
+      }
     }
 
     & #description {
@@ -77,10 +121,22 @@
       max-height: 12.5rem;
       min-height: 4rem;
       resize: none;
+      margin-top: variables.$pm-base;
+
+      &::placeholder {
+        @include mixin.mobil-body-copy;
+        color: variables.$p-black;
+      }
 
       @include mixin.tablet {
         height: 10vw;
         max-height: 12.5rem;
+        min-height: 4rem;
+      }
+
+      @include mixin.desktop {
+        height: 7vw;
+        max-height: 11rem;
         min-height: 4rem;
       }
     }
@@ -95,13 +151,21 @@
         width: 50%;
         margin-left: auto;
       }
+
+      @include mixin.desktop {
+        width: 30%;
+        margin-top: 0;
+        padding: variables.$pm-base * 4;
+        padding-right: 0;
+        border-top: 1px solid variables.$s-mercury;
+      }
     }
 
     &-publish {
       width: 100%;
       color: variables.$p-white;
       background-image: url("../../../assets/icons/publish.svg");
-      background-position: 0 50%;
+      background-position: 0.5rem 50%;
       background-repeat: no-repeat;
       @include mixin.tablet {
         order: 2;

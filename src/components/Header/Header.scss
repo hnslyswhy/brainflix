@@ -25,6 +25,10 @@
       @include mixin.tablet {
         width: 20%;
       }
+
+      @include mixin.tablet {
+        width: 10%;
+      }
     }
 
     &__upload {
