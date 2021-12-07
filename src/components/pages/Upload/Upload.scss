@@ -1,0 +1,68 @@
+@use "../../../styles/partials/mixin";
+@use "../../../styles/partials/variables";
+
+.upload {
+  padding: variables.$pm-base * 4;
+  border-top: 1px solid variables.$s-mercury;
+
+  &-headline {
+    @include mixin.mobil-page-header;
+    margin-bottom: variables.$pm-base * 6;
+  }
+
+  &-form {
+    @include mixin.flexbox(column, flex-start, flex-start);
+
+    &-file {
+      width: 100%;
+      height: 56vw;
+      max-height: 12.5rem;
+      min-height: 6rem;
+      background-image: url("../../../assets/images/Upload-video-preview.jpg");
+      background-position: 0 1.25rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 4px;
+
+      & #file {
+        visibility: hidden;
+      }
+    }
+
+    &-section {
+      margin-top: variables.$pm-base * 4;
+    }
+
+    & #title {
+      width: 100%;
+    }
+
+    & #description {
+      width: 100%;
+      height: 27vw;
+      max-height: 12.5rem;
+      min-height: 4rem;
+    }
+
+    &-buttons {
+      width: 100%;
+      margin-top: variables.$pm-base * 6;
+      @include mixin.flexbox(column, flex-start, center);
+    }
+
+    &-publish {
+      width: 100%;
+      color: variables.$p-white;
+      background-image: url("../../../assets/icons/publish.svg");
+      background-position: 0 50%;
+      background-repeat: no-repeat;
+    }
+
+    &-cancel {
+      width: 100%;
+      background-color: variables.$p-white;
+      color: variables.$p-blue;
+      margin-top: variables.$pm-base * 6;
+    }
+  }
+}

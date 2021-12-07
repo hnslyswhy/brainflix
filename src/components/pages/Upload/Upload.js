@@ -1,0 +1,43 @@
+import React from "react";
+import "./Upload.scss";
+
+const Upload = () => {
+  return (
+    <main className="upload">
+      <h1 className="upload-headline">Upload Video</h1>
+      <form className="upload-form">
+        <label htmlFor="file" className="upload-form-file">
+          VIDEO THUMBNAIL
+          <input id="file" type="file" name="file"></input>
+        </label>
+        <div className="upload-form-entries">
+          <div className="upload-form-section">
+            <label htmlFor="title">TITLE YOUR VIDEO</label>
+            <input type="text" name="title" id="title"></input>
+          </div>
+          <div className="upload-form-section">
+            <label htmlFor="description">ADD A VIDEO DESCRIPTION</label>
+            <input type="text" name="description" id="description"></input>
+          </div>
+        </div>
+        <div className="upload-form-buttons">
+          <button type="submit" className="upload-form-publish">
+            PUBLISH
+          </button>
+          <button type="button" className="upload-form-cancel">
+            CANCEL
+          </button>
+        </div>
+      </form>
+    </main>
+  );
+};
+
+export default Upload;
+/* 
+       <Link to="/upload" className="header-link header-link__upload">
+         <div className="header-upload-container">
+           <span className="header-upload-text">UPLOAD</span>
+           <p className="header-upload-input"></p>
+         </div>
+       </Link>; */

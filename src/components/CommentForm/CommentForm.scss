@@ -27,11 +27,6 @@
     }
   }
 
-  &-label {
-    @include mixin.section-header;
-    color: variables.$p-silver;
-  }
-
   &-input {
     width: 100%;
     height: 17vh;
