@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import VideoCard from "../VideoCard/VideoCard";
 import "./VideoList.scss";
 
@@ -6,11 +7,12 @@ function VideoList(props) {
     <aside className="videos">
       <p className="videos-header">NEXT VIDEOS</p>
       {props.videos.map((item) => (
-        <VideoCard
-          key={item.id}
-          video={item}
-          onClick={props.handlerSelectVideo}
-        />
+        <Link to={`/video/${item.id}`} key={item.id}>
+          <VideoCard
+            video={item}
+            /*             onClick={props.handlerSelectVideo} */
+          />
+        </Link>
       ))}
     </aside>
   );

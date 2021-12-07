@@ -1,11 +1,16 @@
 import React from "react";
 import "./Upload.scss";
 
-const Upload = () => {
+const Upload = (props) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("uploaded");
+    props.history.goBack();
+  };
   return (
     <main className="upload">
       <h1 className="upload-headline">Upload Video</h1>
-      <form className="upload-form">
+      <form className="upload-form" onSubmit={handleSubmit}>
         <div className="upload-form-box">
           <div className="upload-form-video">
             <label htmlFor="file">VIDEO THUMBNAIL</label>
@@ -49,10 +54,3 @@ const Upload = () => {
 };
 
 export default Upload;
-/* 
-       <Link to="/upload" className="header-link header-link__upload">
-         <div className="header-upload-container">
-           <span className="header-upload-text">UPLOAD</span>
-           <p className="header-upload-input"></p>
-         </div>
-       </Link>; */

@@ -22,6 +22,9 @@
 
     @include mixin.desktop {
       padding-left: variables.$pm-base * 4;
+      &:last-of-type {
+        border-bottom: none;
+      }
     }
 
     &:nth-of-type(1) {
@@ -30,6 +33,7 @@
   }
 
   &-content {
+    width: 95%; /////
     @include mixin.mobil-body-copy;
     margin-left: variables.$pm-base * 4;
 
@@ -46,6 +50,7 @@
 
   &-header {
     @include mixin.flexbox(row, space-between, center);
+    width: 100%; /////
   }
 
   &-author {

@@ -1,9 +1,9 @@
 import "./VideoCard.scss";
 
 function VideoCard(props) {
-  const { id, image, title, channel } = props.video;
+  const { image, title, channel } = props.video;
   return (
-    <article className="video-list" onClick={() => props.onClick(id)}>
+    <article className="video-list">
       <div className="video-list-image-container">
         <img className="video-list-image" src={image} alt={title} />
       </div>
