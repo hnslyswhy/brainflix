@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo/BrainFlix-logo.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import searchIcon from "../../assets/icons/search.svg";
@@ -6,7 +7,9 @@ import "./Header.scss";
 function Header() {
   return (
     <header className="header">
-      <img className="header-logo" src={logo} alt="logo" />
+      <Link to="/home" className="header-link header-link__logo">
+        <img className="header-logo" src={logo} alt="logo" />
+      </Link>
       <section className="header-functions">
         <div className="header-search">
           <img
@@ -22,10 +25,12 @@ function Header() {
           />
         </div>
         <img className="header-avatar" src={avatar} alt="avatar" />
-        <label className="header-upload-label">
-          <span className="header-upload-text">UPLOAD</span>
-          <input className="header-upload-input" type="file" name="file" />
-        </label>
+        <Link to="/upload" className="header-link header-link__upload">
+          <div className="header-upload-container">
+            <span className="header-upload-text">UPLOAD</span>
+            <p className="header-upload-input"></p>
+          </div>
+        </Link>
       </section>
     </header>
   );
