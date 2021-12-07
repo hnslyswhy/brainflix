@@ -35,7 +35,8 @@ label {
   color: variables.$p-silver;
 }
 
-input {
+input,
+textarea {
   border-radius: 4px;
   border: 1px solid variables.$s-mercury;
   background-color: variables.$s-alabaster;
@@ -51,7 +52,7 @@ input {
 
   &::placeholder {
     @include mixin.mobil-body-copy;
-    color: variables.$p-silver;
+    color: variables.$p-black;
   }
 
   &:focus {

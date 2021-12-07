@@ -13,11 +13,21 @@ const Upload = () => {
         <div className="upload-form-entries">
           <div className="upload-form-section">
             <label htmlFor="title">TITLE YOUR VIDEO</label>
-            <input type="text" name="title" id="title"></input>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Add title to your video"
+            ></input>
           </div>
           <div className="upload-form-section">
             <label htmlFor="description">ADD A VIDEO DESCRIPTION</label>
-            <input type="text" name="description" id="description"></input>
+            <textarea
+              type="text"
+              name="description"
+              id="description"
+              placeholder="Add a description to your video"
+            ></textarea>
           </div>
         </div>
         <div className="upload-form-buttons">

@@ -5,13 +5,24 @@
   padding: variables.$pm-base * 4;
   border-top: 1px solid variables.$s-mercury;
 
+  @include mixin.tablet {
+    padding: variables.$pm-base * 8;
+  }
+
   &-headline {
     @include mixin.mobil-page-header;
     margin-bottom: variables.$pm-base * 6;
+
+    @include mixin.tablet {
+      @include mixin.page-header;
+    }
   }
 
   &-form {
     @include mixin.flexbox(column, flex-start, flex-start);
+    @include mixin.tablet {
+      border-top: 1px solid variables.$s-mercury;
+    }
 
     &-file {
       width: 100%;
@@ -24,13 +35,36 @@
       background-size: cover;
       border-radius: 4px;
 
+      @include mixin.tablet {
+        width: 50%;
+        height: 25vw;
+        min-height: 14rem;
+        max-height: 18rem;
+        margin-top: variables.$pm-base * 6;
+        background-position: 0 1.875rem;
+      }
+
       & #file {
         visibility: hidden;
       }
     }
 
+    &-entries {
+      @include mixin.tablet {
+        width: 100%;
+      }
+    }
+
     &-section {
       margin-top: variables.$pm-base * 4;
+
+      &:last-of-type {
+        @include mixin.tablet {
+          margin-top: variables.$pm-base * 2;
+          padding-bottom: variables.$pm-base * 4;
+          border-bottom: 1px solid variables.$s-mercury;
+        }
+      }
     }
 
     & #title {
@@ -42,12 +76,25 @@
       height: 27vw;
       max-height: 12.5rem;
       min-height: 4rem;
+      resize: none;
+
+      @include mixin.tablet {
+        height: 10vw;
+        max-height: 12.5rem;
+        min-height: 4rem;
+      }
     }
 
     &-buttons {
       width: 100%;
       margin-top: variables.$pm-base * 6;
       @include mixin.flexbox(column, flex-start, center);
+
+      @include mixin.tablet {
+        @include mixin.flexbox(row, flex-end, center);
+        width: 50%;
+        margin-left: auto;
+      }
     }
 
     &-publish {
@@ -56,6 +103,9 @@
       background-image: url("../../../assets/icons/publish.svg");
       background-position: 0 50%;
       background-repeat: no-repeat;
+      @include mixin.tablet {
+        order: 2;
+      }
     }
 
     &-cancel {
@@ -63,6 +113,10 @@
       background-color: variables.$p-white;
       color: variables.$p-blue;
       margin-top: variables.$pm-base * 6;
+
+      @include mixin.tablet {
+        margin-top: 0;
+      }
     }
   }
 }
