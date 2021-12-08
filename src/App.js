@@ -10,7 +10,11 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route path="/" exact component={Main} />
+          <Route
+            path="/"
+            exact
+            render={(routerProps) => <Main {...routerProps} />}
+          />
           <Route
             path="/video/:videoId"
             render={(routerProps) => <Main {...routerProps} />}

@@ -4,6 +4,7 @@ import Comments from "../Comments/Comments";
 import "./VideoComments.scss";
 
 function VideoComments(props) {
+  console.log(props);
   return (
     <section className="main-comments">
       <p className="main-comments-count">{props.comments.length} Comments</p>

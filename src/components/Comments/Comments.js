@@ -2,7 +2,6 @@ import "./Comment.scss";
 import { getTimeDifference } from "../timeConverter";
 
 function Comments(props) {
-  console.log(props.videoList[0].timestamp);
   return (
     <div className="comments">
       {props.videoList.map((item) => {

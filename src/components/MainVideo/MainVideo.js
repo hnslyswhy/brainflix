@@ -3,6 +3,7 @@ import VideoComments from "../VideoComments/VideoComments";
 import "./MainVideo.scss";
 
 function MainVideo(props) {
+  console.log(props);
   return (
     <div className="main-video">
       <VideoDescription video={props.video} />
