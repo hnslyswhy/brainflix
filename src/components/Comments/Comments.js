@@ -1,10 +1,17 @@
-import "./Comment.scss";
 import { getTimeDifference } from "../timeConverter";
+import { deleteComment } from "../apiRequests";
+import deleteIcon from "../../assets/icons/deleteIcon.png";
+import "./Comment.scss";
 
 function Comments(props) {
+  //console.log(props);
+  const handleDelete = (videoId, commentId) => {
+    deleteComment(videoId, commentId);
+    // then do something to refresh
+  };
   return (
     <div className="comments">
-      {props.videoList.map((item) => {
+      {props.video.comments.map((item) => {
         return (
           <article className="comments-card" key={item.name}>
             <img
@@ -15,9 +22,17 @@ function Comments(props) {
             <div className="comments-content">
               <div className="comments-header">
                 <p className="comments-author">{item.name}</p>
-                <p className="comments-date">
-                  {getTimeDifference(item.timestamp)}
-                </p>
+                <div className="comments-tools">
+                  <p className="comments-date">
+                    {getTimeDifference(item.timestamp)}
+                  </p>
+                  <img
+                    className="comments-delete"
+                    onClick={() => handleDelete(props.video.id, item.id)}
+                    src={deleteIcon}
+                    alt="delete"
+                  />
+                </div>
               </div>
               <p className="comments-text">{item.comment}</p>
             </div>

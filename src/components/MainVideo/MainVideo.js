@@ -7,7 +7,7 @@ function MainVideo(props) {
   return (
     <div className="main-video">
       <VideoDescription video={props.video} />
-      <VideoComments comments={props.video.comments} />
+      <VideoComments video={props.video} />
     </div>
   );
 }

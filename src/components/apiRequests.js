@@ -34,7 +34,6 @@ export const postComment = async function postAComment(
   userName,
   userComment
 ) {
-  let data;
   try {
     let response = await axios.post(
       `${baseUrl}/videos/${id}/comments?api_key=${key}`,
@@ -42,6 +41,18 @@ export const postComment = async function postAComment(
         name: userName,
         comment: userComment,
       }
+    );
+  } catch (e) {
+    console.log(e);
+    alert("something went wrong");
+  }
+};
+
+export const deleteComment = async function deleteAComment(videoId, commentId) {
+  let data;
+  try {
+    let response = await axios.delete(
+      `${baseUrl}/videos/${videoId}/comments/${commentId}?api_key=${key}`
     );
     data = response.data;
   } catch (e) {
