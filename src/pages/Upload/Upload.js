@@ -5,7 +5,7 @@ const Upload = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("uploaded");
-    props.history.goBack();
+    props.history.push("/");
   };
   return (
     <main className="upload">

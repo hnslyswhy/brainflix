@@ -12,9 +12,9 @@ function VideoComments(props) {
       </p>
       <div className="main-comments-container">
         <img className="main-comments-avatar" src={avatar} alt="avatar" />
-        <CommentForm video={props.video} />
+        <CommentForm video={props.video} setData={props.setData} />
       </div>
-      <Comments video={props.video} />
+      <Comments video={props.video} setData={props.setData} />
     </section>
   );
 }

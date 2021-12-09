@@ -4,10 +4,10 @@ import deleteIcon from "../../assets/icons/deleteIcon.png";
 import "./Comment.scss";
 
 function Comments(props) {
-  //console.log(props);
+  console.log(props);
   const handleDelete = (videoId, commentId) => {
     deleteComment(videoId, commentId);
-    // then do something to refresh
+    props.setData(); // this is still not updating
   };
   return (
     <div className="comments">

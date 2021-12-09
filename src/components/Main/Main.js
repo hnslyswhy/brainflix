@@ -26,17 +26,11 @@ class Main extends Component {
 
   setData = () => {
     const targetId = this.props.match.params.videoId;
-    if (targetId) {
-      getOne(targetId).then((res) => {
-        this.setState({ selectedVideo: res, loading: false });
-        console.log(this.state.selectedVideo);
-      });
-    } else {
-      getOne(this.state.videoList[0].id).then((res) => {
-        this.setState({ selectedVideo: res, loading: false });
-        console.log(this.state.selectedVideo);
-      });
-    }
+    let fetchId = targetId ? targetId : this.state.videoList[0].id;
+    getOne(fetchId).then((res) => {
+      this.setState({ selectedVideo: res, loading: false });
+      console.log(this.state.selectedVideo);
+    });
   };
 
   componentDidMount() {
@@ -47,7 +41,7 @@ class Main extends Component {
     const currentVideoId = this.props.match.params.videoId;
     const previousVideoId = prevProps.match.params.videoId;
     if (currentVideoId !== previousVideoId) {
-      this.getInitialData();
+      this.setData();
     }
   }
 
@@ -73,6 +67,7 @@ class Main extends Component {
             </section>
             <MainVideo
               className="main-video-description"
+              setData={this.setData}
               video={selectedVideo}
             />
             <VideoList
@@ -89,50 +84,3 @@ class Main extends Component {
 }
 
 export default Main;
-
-/*  // try not to put too much in state
-class Main extends Component {
-  state = {
-    videoList: videoData,
-    selectedVideo: videoDataDetails[0],
-    filteredList: videoData.slice(1),
-  };
-
-  handlerSelectVideo = (videoId) => {
-    this.setState({
-      selectedVideo: videoDataDetails.find((item) => item.id === videoId),
-    });
-    this.setState({
-      filteredList: videoData.filter((item) => item.id !== videoId),
-    });
-  };
-
-  render() {
-    return (
-      <main className="main">
-        <section className="main-video-section">
-          <video
-            className="main-video-player"
-            src={this.state.selectedVideo.video}
-            type="video/mp4"
-            controls="controls"
-          >
-            Sorry, your browser doesn't support embedded videos.
-          </video>
-        </section>
-        <MainVideo
-          className="main-video-description"
-          video={this.state.selectedVideo}
-        />
-        <VideoList
-          className="main-videolist"
-          videos={this.state.filteredList}
-          handlerSelectVideo={this.handlerSelectVideo}
-        />
-      </main>
-    );
-  }
-}
-
-export default Main;
- */

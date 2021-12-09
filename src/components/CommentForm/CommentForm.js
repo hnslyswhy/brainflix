@@ -1,4 +1,3 @@
-import { Redirect } from "react-router-dom";
 import { postComment } from "../apiRequests";
 import "./CommentForm.scss";
 
@@ -8,9 +7,7 @@ function CommentForm(props) {
     postComment(props.video.id, "someone", e.target.comment.value)
       .then((res) => {
         e.target.reset();
-        //  <Redirect to={`/video/${props.video.id}`} />;
-        // getOne(this.props.video.id)
-        // the comment is showing everywhere !!
+        props.setData(); //react context
       })
       .catch((e) => console.log(e.message));
   };
