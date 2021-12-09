@@ -1,24 +1,24 @@
-import { postComment } from "../apiRequests";
+import { postComment } from "../../utilities/apiRequests";
 import "./CommentForm.scss";
 
-function CommentForm(props) {
+function CommentForm({ video, setData }) {
   const handleSubmit = (e) => {
     e.preventDefault();
-    postComment(props.video.id, "someone", e.target.comment.value)
+    postComment(video.id, "someone", e.target.comment.value)
       .then((res) => {
         e.target.reset();
-        props.setData(); //react context
+        setData(); //react context
       })
       .catch((e) => console.log(e.message));
   };
   return (
     <form className="comment-form" onSubmit={handleSubmit}>
-      <div className="comment-form-container">
-        <label className="comment-form-label" htmlFor="comment">
+      <div className="comment-form__container">
+        <label className="comment-form__label" htmlFor="comment">
           JOIN THE CONVERSATION
         </label>
         <input
-          className="comment-form-input"
+          className="comment-form__input"
           id="comment"
           type="text"
           name="comment"
@@ -27,7 +27,7 @@ function CommentForm(props) {
           required
         />
       </div>
-      <button className="comment-form-btn" type="submit">
+      <button className="comment-form__btn" type="submit">
         COMMENT
       </button>
     </form>

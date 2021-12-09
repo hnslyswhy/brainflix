@@ -9,26 +9,26 @@
     @include mixin.flexbox(row, center, flex-start);
     flex-wrap: wrap;
 
-    &-video-section {
+    &__video-section {
       width: 100%;
       background-color: red;
     }
 
-    &-video-description {
+    &__video-description {
       width: 65%;
     }
 
-    &-videolist {
+    &__videolist {
       width: 35%;
     }
   }
 
-  &-video-section {
+  &__video-section {
     width: 100%;
     background-color: variables.$s-d-black;
   }
 
-  &-video-player {
+  &__video-player {
     width: 100%;
     height: 56.25vw;
 

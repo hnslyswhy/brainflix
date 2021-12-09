@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import Header from "./components/Header/Header";
+import PageHeader from "./components/PageHeader/PageHeader";
 import Main from "./components/Main/Main";
 import Upload from "./pages/Upload/Upload";
 import "./App.scss";
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <PageHeader />
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/video/:videoId" component={Main} />

@@ -13,7 +13,7 @@
     padding: variables.$pm-base * 8 variables.$pm-base * 32;
   }
 
-  &-headline {
+  &__headline {
     @include mixin.mobil-page-header;
     margin-bottom: variables.$pm-base * 4;
 
@@ -23,7 +23,7 @@
     }
   }
 
-  &-form {
+  &__form {
     &-box {
       width: 100%;
       @include mixin.flexbox(column, flex-start, flex-start);

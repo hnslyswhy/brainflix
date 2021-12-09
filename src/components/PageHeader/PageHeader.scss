@@ -16,10 +16,10 @@
     padding: variables.$pm-base * 4 variables.$pm-base * 32;
   }
 
-  &-link {
+  &__link {
     width: 100%;
 
-    &__logo {
+    &--logo {
       @include mixin.flexbox(row, center, center);
 
       @include mixin.tablet {
@@ -31,19 +31,19 @@
       }
     }
 
-    &__upload {
+    &--upload {
       @include mixin.tablet {
         width: 30%;
       }
     }
   }
 
-  &-logo {
+  &__logo {
     max-width: 7.5rem;
     max-height: 1.5625rem;
   }
 
-  &-functions {
+  &__functions {
     width: 100%;
     padding: variables.$pm-base * 4;
     padding-bottom: 0;
@@ -61,7 +61,7 @@
     }
   }
 
-  &-search {
+  &__search {
     width: 80%;
     position: relative;
     padding-right: 4rem;
@@ -97,7 +97,7 @@
     }
   }
 
-  &-avatar {
+  &__avatar {
     @include mixin.avatar;
 
     @include mixin.tablet {
@@ -107,7 +107,7 @@
     }
   }
 
-  &-upload-container {
+  &__upload-container {
     width: 100%;
     border-radius: 4px;
     height: 2.5rem;
@@ -131,12 +131,12 @@
     }
   }
 
-  &-upload-text {
+  &__upload-text {
     width: 95%;
     text-align: center;
   }
 
-  &-upload-input {
+  &__upload-input {
     //  @extend input;
     visibility: hidden;
     width: 1px;

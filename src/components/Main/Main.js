@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { getAll, getOne } from "../apiRequests";
+import { getAll, getOne } from "../../utilities/apiRequests";
 import MainVideo from "../MainVideo/MainVideo";
 import VideoList from "../VideoList/VideoList";
 import "./Main.scss";
@@ -35,6 +35,7 @@ class Main extends Component {
 
   componentDidMount() {
     this.getInitialData();
+    //  window.scrollTo(0, 0);
   }
 
   componentDidUpdate(prevProps) {
@@ -55,10 +56,11 @@ class Main extends Component {
         {loading && <h1>Loading</h1>}
         {!loading && (
           <main className="main">
-            <section className="main-video-section">
+            <section className="main__video-section">
               <video
-                className="main-video-player"
+                className="main__video-player"
                 src={selectedVideo.video}
+                poster={selectedVideo.image}
                 type="video/mp4"
                 controls="controls"
               >
@@ -66,12 +68,12 @@ class Main extends Component {
               </video>
             </section>
             <MainVideo
-              className="main-video-description"
+              className="main__video-description"
               setData={this.setData}
               video={selectedVideo}
             />
             <VideoList
-              className="main-videolist"
+              className="main__videolist"
               videos={this.state.videoList.filter(
                 (item) => item.id !== this.state.selectedVideo.id
               )}

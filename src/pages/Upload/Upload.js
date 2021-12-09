@@ -9,18 +9,18 @@ const Upload = (props) => {
   };
   return (
     <main className="upload">
-      <h1 className="upload-headline">Upload Video</h1>
-      <form className="upload-form" onSubmit={handleSubmit}>
-        <div className="upload-form-box">
-          <div className="upload-form-video">
+      <h1 className="upload__headline">Upload Video</h1>
+      <form className="upload__form" onSubmit={handleSubmit}>
+        <div className="upload__form-box">
+          <div className="upload__form-video">
             <label htmlFor="file">VIDEO THUMBNAIL</label>
-            <div className="upload-form-file">
+            <div className="upload__form-file">
               <input id="file" type="file" name="file"></input>
             </div>
           </div>
 
-          <div className="upload-form-entries">
-            <div className="upload-form-section">
+          <div className="upload__form-entries">
+            <div className="upload__form-section">
               <label htmlFor="title">TITLE YOUR VIDEO</label>
               <input
                 type="text"
@@ -29,7 +29,7 @@ const Upload = (props) => {
                 placeholder="Add title to your video"
               ></input>
             </div>
-            <div className="upload-form-section">
+            <div className="upload__form-section">
               <label htmlFor="description">ADD A VIDEO DESCRIPTION</label>
               <textarea
                 type="text"
@@ -40,11 +40,11 @@ const Upload = (props) => {
             </div>
           </div>
         </div>
-        <div className="upload-form-buttons">
-          <button type="submit" className="upload-form-publish">
+        <div className="upload__form-buttons">
+          <button type="submit" className="upload__form-publish">
             PUBLISH
           </button>
-          <button type="button" className="upload-form-cancel">
+          <button type="button" className="upload__form-cancel">
             CANCEL
           </button>
         </div>

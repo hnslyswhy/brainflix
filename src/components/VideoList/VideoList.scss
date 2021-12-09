@@ -17,7 +17,7 @@
     border-left: 1px solid variables.$s-mercury;
   }
 
-  &-header {
+  &__header {
     @include mixin.section-header;
     color: variables.$p-silver;
     margin-bottom: variables.$pm-base * 2;

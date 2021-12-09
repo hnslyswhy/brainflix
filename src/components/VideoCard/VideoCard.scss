@@ -18,7 +18,7 @@
     }
   }
 
-  &-image-container {
+  &__image-container {
     background-color: variables.$s-mercury;
     width: 33%;
     height: 18vw;
@@ -48,13 +48,13 @@
     }
   }
 
-  &-image {
+  &__image {
     height: 100%;
     width: 100%;
     border-radius: 4px;
   }
 
-  &-info {
+  &__info {
     width: 77%;
     @include mixin.mobil-body-copy;
     @include mixin.flexbox(column, flex-start, space-between);
@@ -69,7 +69,7 @@
     }
   }
 
-  &-title {
+  &__title {
     font-weight: 700;
     margin-bottom: variables.$pm-base * 2;
 

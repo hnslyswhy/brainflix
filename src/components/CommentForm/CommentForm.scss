@@ -13,7 +13,7 @@
     justify-content: flex-start;
   }
 
-  &-container {
+  &__container {
     width: 100%;
     @include mixin.mobil-body-copy;
 
@@ -27,7 +27,7 @@
     }
   }
 
-  &-input {
+  &__input {
     width: 100%;
     height: 17vh;
     min-height: 2.25rem;
@@ -49,7 +49,7 @@
     }
   }
 
-  &-btn {
+  &__btn {
     width: 100%;
     background-image: url("../../assets/icons/add_comment.svg");
     background-repeat: no-repeat;
