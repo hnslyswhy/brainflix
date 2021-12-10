@@ -23,8 +23,8 @@
     }
   }
 
-  &__form {
-    &-box {
+  & .form {
+    &__box {
       width: 100%;
       @include mixin.flexbox(column, flex-start, flex-start);
 
@@ -40,14 +40,14 @@
       }
     }
 
-    &-video {
+    &__video {
       width: 100%;
       @include mixin.desktop {
         width: 32%;
       }
     }
 
-    &-file {
+    &__file {
       width: 100%;
       height: 55vw;
       max-height: 12rem;
@@ -78,7 +78,7 @@
       }
     }
 
-    &-entries {
+    &__entries {
       @include mixin.tablet {
         width: 100%;
       }
@@ -89,7 +89,7 @@
       }
     }
 
-    &-section {
+    &__section {
       margin-top: variables.$pm-base * 4;
       @include mixin.desktop {
         margin-top: 0;
@@ -141,7 +141,7 @@
       }
     }
 
-    &-buttons {
+    &__buttons {
       width: 100%;
       margin-top: variables.$pm-base * 6;
       @include mixin.flexbox(column, flex-start, center);
@@ -161,7 +161,7 @@
       }
     }
 
-    &-publish {
+    &__publish {
       width: 100%;
       color: variables.$p-white;
       background-image: url("../../assets/icons/publish.svg");
@@ -172,7 +172,7 @@
       }
     }
 
-    &-cancel {
+    &__cancel {
       width: 100%;
       background-color: variables.$p-white;
       color: variables.$p-blue;

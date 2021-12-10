@@ -2,13 +2,15 @@
 @use "../../styles/partials/variables";
 
 .comments {
-  &__avatar {
-    @include mixin.avatar;
-
+  &__box {
+    @include mixin.avatar-container;
     @include mixin.tablet {
       max-width: 2.5rem;
       max-height: 2.5rem;
     }
+  }
+  &__avatar {
+    @include mixin.avatar;
   }
 
   &__card {

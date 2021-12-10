@@ -11,24 +11,22 @@ function PageHeader() {
         <img className="header__logo" src={logo} alt="logo" />
       </Link>
       <section className="header__functions">
-        <div className="header__search">
-          <img
-            className="header__search-icon"
-            src={searchIcon}
-            alt="search icon"
-          />
+        <div className="search">
+          <img className="search__icon" src={searchIcon} alt="search icon" />
           <input
-            className="header__search-input"
+            className="search__input"
             name="search"
             type="text"
             placeholder="Search"
           />
         </div>
-        <img className="header__avatar" src={avatar} alt="avatar" />
+        <div className="header__box">
+          <img className="header__avatar" src={avatar} alt="avatar" />
+        </div>
         <Link to="/upload" className="header__link header__link--upload">
-          <div className="header__upload-container">
-            <span className="header__upload-text">UPLOAD</span>
-            <p className="header__upload-input"></p>
+          <div className="upload-btn">
+            <span className="upload-btn__text">UPLOAD</span>
+            <p className="upload-btn__input"></p>
           </div>
         </Link>
       </section>

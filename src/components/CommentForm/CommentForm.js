@@ -1,13 +1,13 @@
 import { postComment } from "../../utilities/apiRequests";
 import "./CommentForm.scss";
 
-function CommentForm({ video, setData }) {
+function CommentForm({ video, setVideos }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     postComment(video.id, "someone", e.target.comment.value)
       .then((res) => {
         e.target.reset();
-        setData(); //react context
+        setVideos(); //react context
       })
       .catch((e) => console.log(e.message));
   };

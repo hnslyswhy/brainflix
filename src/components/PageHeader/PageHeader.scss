@@ -61,82 +61,83 @@
     }
   }
 
-  &__search {
-    width: 80%;
-    position: relative;
-    padding-right: 4rem;
-
+  &__box {
+    @include mixin.avatar-container;
     @include mixin.tablet {
-      width: 50%;
-    }
-
-    &-icon {
-      position: absolute;
-      top: 30%;
-      left: 0.5rem;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-
-    &-input {
-      padding: 0.5rem;
-      padding-left: 2rem;
-      width: 100%;
-
-      @include mixin.tablet {
-        padding: 0.75rem;
-        padding-left: 2rem;
-      }
-
-      &::placeholder {
-        position: absolute;
-        left: variables.$pm-base * 8;
-      }
-    }
-  }
-
-  &__avatar {
-    @include mixin.avatar;
-
-    @include mixin.tablet {
-      order: 2;
       max-width: 2.5rem;
       max-height: 2.5rem;
     }
   }
+  &__avatar {
+    @include mixin.avatar;
+    height: 100%;
+  }
+}
 
-  &__upload-container {
-    width: 100%;
-    border-radius: 4px;
-    height: 2.5rem;
-    border: 1px solid variables.$s-mercury;
-    background-color: variables.$p-blue;
-    background-image: url("../../assets/icons/upload.svg");
-    background-position: 0.5rem 50%;
-    background-repeat: no-repeat;
-    @include mixin.labels;
-    color: variables.$p-white;
-    margin-top: variables.$pm-base * 4;
-    @include mixin.flexbox(row, center, center);
+.search {
+  width: 80%;
+  position: relative;
 
-    @include mixin.tablet {
-      margin-top: 0;
-    }
+  @include mixin.tablet {
+    width: 50%;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 30%;
+    left: 0.5rem;
 
     &:hover {
       cursor: pointer;
-      background-color: variables.$s-d-blue;
     }
   }
 
-  &__upload-text {
+  &__input {
+    padding: 0.5rem;
+    padding-left: 2rem;
+    width: 100%;
+
+    @include mixin.tablet {
+      padding: 0.75rem;
+      padding-left: 2rem;
+    }
+
+    &::placeholder {
+      position: absolute;
+      left: variables.$pm-base * 8;
+    }
+  }
+}
+
+.upload-btn {
+  width: 100%;
+  border-radius: 4px;
+  height: 2.5rem;
+  border: 1px solid variables.$s-mercury;
+  background-color: variables.$p-blue;
+  background-image: url("../../assets/icons/upload.svg");
+  background-position: 0.5rem 50%;
+  background-repeat: no-repeat;
+  @include mixin.labels;
+  color: variables.$p-white;
+  margin-top: variables.$pm-base * 4;
+  @include mixin.flexbox(row, center, center);
+
+  @include mixin.tablet {
+    margin-top: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: variables.$s-d-blue;
+  }
+
+  &__text {
     width: 95%;
     text-align: center;
   }
 
-  &__upload-input {
+  &__input {
     //  @extend input;
     visibility: hidden;
     width: 1px;

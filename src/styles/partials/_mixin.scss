@@ -11,11 +11,16 @@
   align-items: $align-items;
 }
 
-@mixin avatar {
+@mixin avatar-container {
   width: 15%;
   height: 15vw;
   max-width: 2.25rem;
   max-height: 2.25rem;
+}
+@mixin avatar {
+  width: 100%;
+  object-fit: cover;
+  object-position: 20% 50%;
   border-radius: 50%;
 }
 

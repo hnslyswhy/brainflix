@@ -1,5 +1,5 @@
 import axios from "axios";
-const key = "bbb4926f-148c-4c8f-bf23-5fb1d4a46015";
+const key = "1ed2cf28-7c6c-4c8b-a0ae-c084fb998fb1";
 const baseUrl = "https://project-2-api.herokuapp.com";
 
 export const getAll = async function getList() {
@@ -8,7 +8,6 @@ export const getAll = async function getList() {
   try {
     response = await axios.get(`${baseUrl}/videos?api_key=${key}`);
     data = response.data;
-    console.log(data);
   } catch (e) {
     console.log(e);
     alert("something went wrong");

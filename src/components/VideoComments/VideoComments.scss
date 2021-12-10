@@ -40,19 +40,22 @@
     }
   }
 
-  &__avatar {
-    @include mixin.avatar;
+  &__box {
+    @include mixin.avatar-container;
     margin-top: variables.$pm-base * 6;
     margin-right: variables.$pm-base * 4;
 
     @include mixin.tablet {
-      margin-right: variables.$pm-base * 6;
       max-width: 2.5rem;
       max-height: 2.5rem;
+      margin-right: variables.$pm-base * 6;
     }
-
     @include mixin.desktop {
       margin-right: variables.$pm-base * 8;
     }
+  }
+  &__avatar {
+    @include mixin.avatar;
+    height: 100%;
   }
 }

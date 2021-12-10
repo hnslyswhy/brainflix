@@ -2,11 +2,11 @@ import VideoDescription from "../VideoDescription/VideoDescription";
 import VideoComments from "../VideoComments/VideoComments";
 import "./MainVideo.scss";
 
-function MainVideo({ video, setData }) {
+function MainVideo({ video, setVideos }) {
   return (
     <div className="main-video">
       <VideoDescription video={video} />
-      <VideoComments video={video} setData={setData} />
+      <VideoComments video={video} setVideos={setVideos} />
     </div>
   );
 }

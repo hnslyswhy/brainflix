@@ -13,36 +13,37 @@ class Main extends Component {
     loading: true,
   };
 
-  getInitialData = () => {
+  getAllVideos = () => {
+    // change name
     getAll()
       .then((res) => {
         this.setState({ videoList: res });
       })
       .then(() => {
-        this.setData();
+        this.setVideos();
       })
       .catch((e) => console.log(e.message));
   };
 
-  setData = () => {
+  setVideos = () => {
+    //  change name
     const targetId = this.props.match.params.videoId;
     let fetchId = targetId ? targetId : this.state.videoList[0].id;
     getOne(fetchId).then((res) => {
       this.setState({ selectedVideo: res, loading: false });
-      console.log(this.state.selectedVideo);
+      window.scrollTo(0, 0);
     });
   };
 
   componentDidMount() {
-    this.getInitialData();
-    //  window.scrollTo(0, 0);
+    this.getAllVideos();
   }
 
   componentDidUpdate(prevProps) {
     const currentVideoId = this.props.match.params.videoId;
     const previousVideoId = prevProps.match.params.videoId;
     if (currentVideoId !== previousVideoId) {
-      this.setData();
+      this.setVideos();
     }
   }
 
@@ -59,7 +60,8 @@ class Main extends Component {
             <section className="main__video-section">
               <video
                 className="main__video-player"
-                src={selectedVideo.video}
+                /*     src={selectedVideo.video} */
+                src={`${selectedVideo.video}?api_key=1ed2cf28-7c6c-4c8b-a0ae-c084fb998fb1`}
                 poster={selectedVideo.image}
                 type="video/mp4"
                 controls="controls"
@@ -69,11 +71,11 @@ class Main extends Component {
             </section>
             <MainVideo
               className="main__video-description"
-              setData={this.setData}
+              setVideos={this.setVideos}
               video={selectedVideo}
             />
             <VideoList
-              className="main__videolist"
+              className="main__video-list"
               videos={this.state.videoList.filter(
                 (item) => item.id !== this.state.selectedVideo.id
               )}

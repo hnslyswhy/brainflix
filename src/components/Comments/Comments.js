@@ -3,21 +3,24 @@ import { deleteComment } from "../../utilities/apiRequests";
 import deleteIcon from "../../assets/icons/deleteIcon.png";
 import "./Comment.scss";
 
-function Comments({ video, setData }) {
+function Comments({ video, setVideos }) {
   const handleDelete = (videoId, commentId) => {
-    deleteComment(videoId, commentId);
-    setData(); // this is still not updating
+    deleteComment(videoId, commentId)
+      .then(() => setVideos())
+      .catch((e) => console.log(e.message));
   };
   return (
     <div className="comments">
       {video.comments.map((item) => {
         return (
           <article className="comments__card" key={item.name}>
-            <img
-              className="comments__avatar"
-              src="https://via.placeholder.com/150"
-              alt="avatar"
-            />
+            <div className="comments__box">
+              <img
+                className="comments__avatar"
+                src="https://via.placeholder.com/150"
+                alt="avatar"
+              />
+            </div>
             <div className="comments__content">
               <div className="comments__header">
                 <p className="comments__author">{item.name}</p>
