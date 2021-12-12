@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import PageHeader from "./components/PageHeader/PageHeader";
-import Main from "./components/Main/Main";
+import Main from "./pages/Main/Main";
 import Upload from "./pages/Upload/Upload";
 import "./App.scss";
 

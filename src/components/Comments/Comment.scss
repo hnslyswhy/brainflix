@@ -16,7 +16,7 @@
   &__card {
     @include mixin.flexbox(row, flex-start, flex-start);
     padding: variables.$pm-base * 4 0;
-    border-bottom: 1px solid variables.$s-mercury;
+    border-bottom: 1px solid variables.$secondary-mercury;
 
     @include mixin.tablet {
       padding: variables.$pm-base * 6 0;
@@ -30,7 +30,7 @@
     }
 
     &:nth-of-type(1) {
-      border-top: 1px solid variables.$s-mercury;
+      border-top: 1px solid variables.$secondary-mercury;
     }
   }
 
@@ -64,7 +64,7 @@
   }
 
   &__date {
-    color: variables.$p-silver;
+    color: variables.$primary-silver;
   }
 
   &__delete {

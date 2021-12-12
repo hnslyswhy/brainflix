@@ -3,7 +3,7 @@
 
 .upload {
   padding: variables.$pm-base * 4;
-  border-top: 1px solid variables.$s-mercury;
+  border-top: 1px solid variables.$secondary-mercury;
 
   @include mixin.tablet {
     padding: variables.$pm-base * 8;
@@ -30,13 +30,13 @@
 
       @include mixin.tablet {
         padding-top: variables.$pm-base * 6;
-        border-top: 1px solid variables.$s-mercury;
-        border-bottom: 1px solid variables.$s-mercury;
+        border-top: 1px solid variables.$secondary-mercury;
+        border-bottom: 1px solid variables.$secondary-mercury;
       }
       @include mixin.desktop {
         @include mixin.flexbox(row, space-between, flex-start);
         flex-wrap: wrap;
-        //     border-top: 1px solid variables.$s-mercury;
+        //     border-top: 1px solid variables.$secondary-mercury;
       }
     }
 
@@ -111,7 +111,7 @@
       margin-top: variables.$pm-base;
       &::placeholder {
         @include mixin.mobil-body-copy;
-        color: variables.$p-black;
+        color: variables.$primary-black;
       }
     }
 
@@ -125,7 +125,7 @@
 
       &::placeholder {
         @include mixin.mobil-body-copy;
-        color: variables.$p-black;
+        color: variables.$primary-black;
       }
 
       @include mixin.tablet {
@@ -157,13 +157,13 @@
         margin-top: 0;
         padding: variables.$pm-base * 4;
         padding-right: 0;
-        border-top: 1px solid variables.$s-mercury;
+        border-top: 1px solid variables.$secondary-mercury;
       }
     }
 
     &__publish {
       width: 100%;
-      color: variables.$p-white;
+      color: variables.$primary-white;
       background-image: url("../../assets/icons/publish.svg");
       background-position: 0.5rem 50%;
       background-repeat: no-repeat;
@@ -174,8 +174,8 @@
 
     &__cancel {
       width: 100%;
-      background-color: variables.$p-white;
-      color: variables.$p-blue;
+      background-color: variables.$primary-white;
+      color: variables.$primary-blue;
       margin-top: variables.$pm-base * 6;
 
       @include mixin.tablet {

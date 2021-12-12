@@ -4,7 +4,7 @@
 .header {
   width: 100%;
   @include mixin.flexbox(column, center, center);
-  background-color: variables.$p-white;
+  background-color: variables.$primary-white;
   padding: variables.$pm-base * 4 0;
 
   @include mixin.tablet {
@@ -113,13 +113,13 @@
   width: 100%;
   border-radius: 4px;
   height: 2.5rem;
-  border: 1px solid variables.$s-mercury;
-  background-color: variables.$p-blue;
+  border: 1px solid variables.$secondary-mercury;
+  background-color: variables.$primary-blue;
   background-image: url("../../assets/icons/upload.svg");
   background-position: 0.5rem 50%;
   background-repeat: no-repeat;
   @include mixin.labels;
-  color: variables.$p-white;
+  color: variables.$primary-white;
   margin-top: variables.$pm-base * 4;
   @include mixin.flexbox(row, center, center);
 
@@ -129,7 +129,7 @@
 
   &:hover {
     cursor: pointer;
-    background-color: variables.$s-d-blue;
+    background-color: variables.$secondary-dark-blue;
   }
 
   &__text {

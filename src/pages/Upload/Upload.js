@@ -7,6 +7,11 @@ const Upload = (props) => {
     alert("uploaded");
     props.history.push("/");
   };
+
+  const handleCancel = () => {
+    alert("form submission canceled");
+    props.history.goBack();
+  };
   return (
     <main className="upload">
       <h1 className="upload__headline">Upload Video</h1>
@@ -44,7 +49,7 @@ const Upload = (props) => {
           <button type="submit" className="form__publish">
             PUBLISH
           </button>
-          <button type="button" className="form__cancel">
+          <button type="button" className="form__cancel" onClick={handleCancel}>
             CANCEL
           </button>
         </div>

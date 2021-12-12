@@ -26,8 +26,8 @@
     margin: variables.$pm-base * 4 0;
     padding-top: variables.$pm-base * 4;
     padding-bottom: variables.$pm-base * 2;
-    border-top: 1px solid variables.$s-mercury;
-    border-bottom: 1px solid variables.$s-mercury;
+    border-top: 1px solid variables.$secondary-mercury;
+    border-bottom: 1px solid variables.$secondary-mercury;
     @include mixin.mobil-body-copy;
 
     @include mixin.tablet {
@@ -55,7 +55,7 @@
   }
 
   &__info-time {
-    color: variables.$p-silver;
+    color: variables.$primary-silver;
   }
 
   &__social-container {
@@ -85,7 +85,7 @@
   &__views,
   &__likes {
     margin-left: variables.$pm-base * 2;
-    color: variables.$p-silver;
+    color: variables.$primary-silver;
   }
 
   &__text {

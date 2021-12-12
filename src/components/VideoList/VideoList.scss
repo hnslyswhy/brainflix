@@ -14,12 +14,12 @@
     width: 34%;
     padding-top: variables.$pm-base * 8;
     padding-left: variables.$pm-base * 6;
-    border-left: 1px solid variables.$s-mercury;
+    border-left: 1px solid variables.$secondary-mercury;
   }
 
   &__header {
     @include mixin.section-header;
-    color: variables.$p-silver;
+    color: variables.$primary-silver;
     margin-bottom: variables.$pm-base * 2;
 
     @include mixin.desktop {

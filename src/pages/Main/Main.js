@@ -1,8 +1,9 @@
 import { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { getAll, getOne } from "../../utilities/apiRequests";
-import MainVideo from "../MainVideo/MainVideo";
-import VideoList from "../VideoList/VideoList";
+import LoadingSpinner from "../../utilities/LoadingSpinner/LoadingSpinner";
+import MainVideo from "../../components/MainVideo/MainVideo";
+import VideoList from "../../components/VideoList/VideoList";
 import "./Main.scss";
 
 class Main extends Component {
@@ -14,7 +15,6 @@ class Main extends Component {
   };
 
   getAllVideos = () => {
-    // change name
     getAll()
       .then((res) => {
         this.setState({ videoList: res });
@@ -26,7 +26,6 @@ class Main extends Component {
   };
 
   setVideos = () => {
-    //  change name
     const targetId = this.props.match.params.videoId;
     let fetchId = targetId ? targetId : this.state.videoList[0].id;
     getOne(fetchId).then((res) => {
@@ -54,13 +53,16 @@ class Main extends Component {
     }
     return (
       <>
-        {loading && <h1>Loading</h1>}
+        {loading && (
+          <main className="loading-container">
+            <LoadingSpinner className="loading-spinner" />
+          </main>
+        )}
         {!loading && (
           <main className="main">
             <section className="main__video-section">
               <video
                 className="main__video-player"
-                /*     src={selectedVideo.video} */
                 src={`${selectedVideo.video}?api_key=1ed2cf28-7c6c-4c8b-a0ae-c084fb998fb1`}
                 poster={selectedVideo.image}
                 type="video/mp4"

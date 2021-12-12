@@ -54,7 +54,7 @@
     background-image: url("../../assets/icons/add_comment.svg");
     background-repeat: no-repeat;
     background-position: variables.$pm-base * 2 50%;
-    color: variables.$p-white;
+    color: variables.$primary-white;
     font-weight: 400;
 
     @include mixin.tablet {

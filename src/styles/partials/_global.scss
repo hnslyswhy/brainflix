@@ -8,13 +8,13 @@
 
 body {
   font-family: "Avenir", serif;
-  color: variables.$p-black;
-  background-color: variables.$p-white;
+  color: variables.$primary-black;
+  background-color: variables.$primary-white;
 }
 
 a {
   text-decoration: none;
-  color: variables.$p-black;
+  color: variables.$primary-black;
 }
 
 button {
@@ -22,25 +22,25 @@ button {
   padding: 0 variables.$pm-base * 8;
   border-radius: 4px;
   border: none;
-  background-color: variables.$p-blue;
+  background-color: variables.$primary-blue;
   @include mixin.labels;
 
   &:hover {
     cursor: pointer;
-    background-color: variables.$s-d-blue;
+    background-color: variables.$secondary-dark-blue;
   }
 }
 
 label {
   @include mixin.section-header;
-  color: variables.$p-silver;
+  color: variables.$primary-silver;
 }
 
 input,
 textarea {
   border-radius: 4px;
-  border: 1px solid variables.$s-mercury;
-  background-color: variables.$s-alabaster;
+  border: 1px solid variables.$secondary-mercury;
+  background-color: variables.$secondary-alabaster;
   min-width: 15rem;
   max-width: 100%;
   min-height: 2.25rem;
@@ -53,12 +53,12 @@ textarea {
 
   &::placeholder {
     @include mixin.mobil-body-copy;
-    color: variables.$p-black;
+    color: variables.$primary-black;
   }
 
   &:focus {
     outline: none;
-    border: 2px solid variables.$p-blue;
+    border: 2px solid variables.$primary-blue;
   }
 
   &:focus:invalid {
