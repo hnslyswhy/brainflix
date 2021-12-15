@@ -7,7 +7,7 @@ function CommentForm({ video, setVideos }) {
     postComment(video.id, "someone", e.target.comment.value)
       .then((res) => {
         e.target.reset();
-        setVideos(); //react context
+        setVideos(); //or use react context
       })
       .catch((e) => console.log(e.message));
   };

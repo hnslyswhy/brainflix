@@ -1,9 +1,15 @@
 import React from "react";
+import { uploadVideo } from "../../utilities/apiRequests";
 import "./Upload.scss";
 
 const Upload = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
+    uploadVideo(
+      e.target.title.value,
+      e.target.description.value,
+      e.target.file.value
+    );
     alert("uploaded");
     props.history.push("/");
   };
