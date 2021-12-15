@@ -299,5 +299,18 @@
       }
     ],
     "id": "76ca28c0-7dea-4553-887f-8e5129a80fc3"
+  },
+  {
+    "title": "trial",
+    "channel": "",
+    "image": "http://localhost:8080/images/upload-video-preview.jpg",
+    "description": "this is a trial of uploading video file",
+    "views": "0",
+    "likes": "0",
+    "duration": "",
+    "video": "C:\\fakepath\\BrainStation.mp4",
+    "timestamp": 1639587964896,
+    "comments": [],
+    "id": "c0b6d60b-cf15-495c-8da0-08f010639175"
   }
 ]

@@ -79,7 +79,7 @@ videoRouter.post("/", (req, res) => {
   let allVideos = videoData;
   allVideos.push(newVideo);
   try {
-    fs.writeFileSync("./data/video-try.json", JSON.stringify(allVideos));
+    fs.writeFileSync("./data/video-details.json", JSON.stringify(allVideos));
     res.status(200).send(newVideo);
   } catch (e) {
     console.log(e);

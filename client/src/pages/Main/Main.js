@@ -4,7 +4,7 @@ import { getAll, getOne } from "../../utilities/apiRequests";
 import LoadingSpinner from "../../utilities/LoadingSpinner/LoadingSpinner";
 import MainVideo from "../../components/MainVideo/MainVideo";
 import VideoList from "../../components/VideoList/VideoList";
-import BSvideo from "../../assets/video/BrainStation.mp4";
+//import BSvideo from "../../assets/video/BrainStation.mp4";
 import "./Main.scss";
 
 class Main extends Component {
@@ -28,10 +28,8 @@ class Main extends Component {
       })
       .then(() => {
         this.setVideos();
-        /*   const video = document.getElementById("video");
-        console.log(video);
-        this.setState({ video: video }); */
-        //    console.log(this.state.video);
+        const video = document.getElementById("video");
+        this.setState({ video: video });
       })
       .catch((e) => console.log(e.message));
   };
@@ -95,8 +93,7 @@ class Main extends Component {
               <video
                 id="video"
                 className="main__video-player"
-                /*   src={`${selectedVideo.video}?api_key=1ed2cf28-7c6c-4c8b-a0ae-c084fb998fb1`} */
-                src={BSvideo}
+                src={this.state.selectedVideo.video}
                 poster={selectedVideo.image}
                 type="video/mp4"
               />

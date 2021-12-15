@@ -1,6 +1,6 @@
 import axios from "axios";
-const key = "1ed2cf28-7c6c-4c8b-a0ae-c084fb998fb1";
-const baseUrl = "https://project-2-api.herokuapp.com";
+//const key = "1ed2cf28-7c6c-4c8b-a0ae-c084fb998fb1";
+//const baseUrl = "https://project-2-api.herokuapp.com";
 
 export const getAll = async function getList() {
   let response;
@@ -72,12 +72,11 @@ export const uploadVideo = async function uploadAVideo(
   videoFile
 ) {
   try {
-    let response = await axios.post("http://localhost:8080/videos", {
+    await axios.post("http://localhost:8080/videos", {
       title: videoTitle,
       description: videoDescription,
       video: videoFile,
     });
-    let data = response.data;
   } catch (e) {
     console.log(e);
     alert("something went wrong");
