@@ -1,13 +1,10 @@
 import axios from "axios";
-//const key = "1ed2cf28-7c6c-4c8b-a0ae-c084fb998fb1";
-//const baseUrl = "https://project-2-api.herokuapp.com";
 
 export const getAll = async function getList() {
   let response;
   let data;
   try {
-    // response = await axios.get(`${baseUrl}/videos?api_key=${key}`);
-    response = await axios.get("http://localhost:8080/videos");
+    response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/videos`);
     data = response.data;
   } catch (e) {
     console.log(e);
@@ -19,8 +16,9 @@ export const getAll = async function getList() {
 export const getOne = async function getDetails(id) {
   let data;
   try {
-    //  let response = await axios.get(`${baseUrl}/videos/${id}?api_key=${key}`);
-    let response = await axios.get(`http://localhost:8080/videos/${id}`);
+    let response = await axios.get(
+      `${process.env.REACT_APP_SERVER_URL}/videos/${id}`
+    );
     data = response.data;
   } catch (e) {
     console.log(e);
@@ -35,14 +33,13 @@ export const postComment = async function postAComment(
   userComment
 ) {
   try {
-    /*  await axios.post(`${baseUrl}/videos/${id}/comments?api_key=${key}`, {
-      name: userName,
-      comment: userComment,
-    }); */
-    await axios.post(`http://localhost:8080/videos/${id}/comments`, {
-      name: userName,
-      comment: userComment,
-    });
+    await axios.post(
+      `${process.env.REACT_APP_SERVER_URL}/videos/${id}/comments`,
+      {
+        name: userName,
+        comment: userComment,
+      }
+    );
   } catch (e) {
     console.log(e);
     alert("something went wrong");
@@ -52,11 +49,8 @@ export const postComment = async function postAComment(
 export const deleteComment = async function deleteAComment(videoId, commentId) {
   let data;
   try {
-    /*     let response = await axios.delete(
-      `${baseUrl}/videos/${videoId}/comments/${commentId}?api_key=${key}`
-    ); */
     let response = await axios.delete(
-      `http://localhost:8080/videos/${videoId}/comments/${commentId}`
+      `${process.env.REACT_APP_SERVER_URL}/videos/${videoId}/comments/${commentId}`
     );
     data = response.data;
   } catch (e) {
@@ -72,7 +66,7 @@ export const uploadVideo = async function uploadAVideo(
   videoFile
 ) {
   try {
-    await axios.post("http://localhost:8080/videos", {
+    await axios.post(`${process.env.REACT_APP_SERVER_URL}/videos`, {
       title: videoTitle,
       description: videoDescription,
       video: videoFile,

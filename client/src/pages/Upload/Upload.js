@@ -5,11 +5,18 @@ import "./Upload.scss";
 const Upload = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    uploadVideo(
-      e.target.title.value,
-      e.target.description.value,
-      e.target.file.value
-    );
+    const reader = new FileReader();
+    reader.onload = function () {
+      console.log(reader.result);
+      uploadVideo(
+        e.target.title.value,
+        e.target.description.value,
+        reader.result
+      );
+    };
+    reader.readAsText(e.target.file.files[0]);
+
+    //files are handled differently,  console.log(e.target.file.files[0]) to see
     alert("uploaded");
     props.history.push("/");
   };

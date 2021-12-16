@@ -18,7 +18,6 @@ class Main extends Component {
     mute: false,
     curTime: "0:00",
     duration: "4:01",
-    video: null,
   };
 
   getAllVideos = () => {
@@ -28,8 +27,6 @@ class Main extends Component {
       })
       .then(() => {
         this.setVideos();
-        const video = document.getElementById("video");
-        this.setState({ video: video });
       })
       .catch((e) => console.log(e.message));
   };
@@ -93,7 +90,12 @@ class Main extends Component {
               <video
                 id="video"
                 className="main__video-player"
-                src={this.state.selectedVideo.video}
+                src={
+                  this.state.selectedVideo.video.includes("herokuapp")
+                    ? this.state.selectedVideo.video +
+                      "?api_key=1ed2cf28-7c6c-4c8b-a0ae-c084fb998fb1"
+                    : this.state.selectedVideo.video
+                }
                 poster={selectedVideo.image}
                 type="video/mp4"
               />
