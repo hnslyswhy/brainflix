@@ -126,11 +126,11 @@
       resize: none;
       margin-top: variables.$pm-base;
 
-      /*       &::placeholder {
+      &::-webkit-input-placeholder {
         @include mixin.mobil-body-copy;
         font-family: "Avenir", serif;
-        color: variables.$primary-black;
-      } */
+        color: red;
+      }
 
       @include mixin.tablet {
         height: 10vw;

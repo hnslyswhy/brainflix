@@ -89,12 +89,17 @@
     background-color: variables.$secondary-dark-black;
     opacity: 50%;
     width: 5%;
-    height: 1.5625rem;
+    height: 1.25rem;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 25%;
     padding: 0 variables.$pm-base * 4;
     @include mixin.tablet {
       width: 5%;
+    }
+
+    @include mixin.tablet {
+      background-size: 20%;
     }
   }
 
@@ -108,23 +113,30 @@
   &__video-bar {
     cursor: pointer;
     border-radius: 6px;
-    width: 60%;
-    height: 1.5625rem;
+    width: 68%;
+    height: 1.25rem;
     background-color: variables.$secondary-dark-black;
     opacity: 50%;
-    padding: 0 variables.$pm-base * 4;
-    @include mixin.flexbox(row, center, center);
+    padding: 0 variables.$pm-base * 2;
+    position: relative;
+    @include mixin.flexbox(row, space-between, center);
 
     @include mixin.tablet {
       width: 80%;
     }
 
     #progress {
-      width: 85%;
-      -webkit-appearance: none;
-      appearance: none;
+      width: 70%;
       height: 0.25rem;
       padding-right: variables.$pm-base * 4;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 2px;
+      pointer-events: none;
+      position: absolute;
+      order: 2;
+
       &::-webkit-progress-bar {
         background-color: variables.$secondary-mercury;
         border-radius: 2px;
@@ -133,18 +145,38 @@
         background-color: variables.$secondary-dark-blue;
         border-radius: 2px;
       }
+      &::-moz-progress-bar {
+        border: 1px solid red;
+        background: red;
+      }
     }
 
-    #progress-time {
-      @include mixin.labels;
-      color: variables.$secondary-mercury;
+    #seek {
+      width: 70%;
+      height: 0.25rem;
+      border-radius: 2px;
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      order: 1;
+      min-width: 5rem;
     }
+  }
+
+  & .time {
+    width: 20%;
+    @include mixin.flexbox(row, center, center);
+    @include mixin.labels;
+    font-size: 0.5rem;
+    color: variables.$secondary-mercury;
+    position: absolute;
+    right: variables.$pm-base * 2;
   }
 
   &__video-other {
     border-radius: 6px;
     width: 20%;
-    height: 1.5625rem;
+    height: 1.25rem;
     background-color: variables.$secondary-dark-black;
     opacity: 50%;
     @include mixin.flexbox(row, space-around, center);
@@ -160,12 +192,16 @@
   &__video-mute {
     cursor: pointer;
     width: 50%;
-    height: 1.5625rem;
+    height: 1.25rem;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 40%;
     padding: 0;
     border-radius: 0;
     background-color: variables.$secondary-dark-black;
+    @include mixin.tablet {
+      background-size: 35%;
+    }
   }
 
   &__video-full {

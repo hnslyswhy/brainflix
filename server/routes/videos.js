@@ -57,8 +57,18 @@ videoRouter.get("/:id", (req, res) => {
 
 //post new video
 videoRouter.post("/", (req, res) => {
-  console.log(req.body.title, req.body.description, req.body.video);
-  if (!req.body.title || !req.body.description || !req.body.video) {
+  console.log(
+    req.body.title,
+    req.body.description,
+    req.body.video,
+    req.body.image
+  );
+  if (
+    !req.body.title ||
+    !req.body.description ||
+    !req.body.video ||
+    !req.body.image
+  ) {
     return res
       .status(400)
       .json({ message: "please include title, description and file" });
@@ -66,7 +76,7 @@ videoRouter.post("/", (req, res) => {
   const newVideo = {
     title: req.body.title,
     channel: "",
-    image: "http://localhost:8080/images/upload-video-preview.jpg",
+    image: req.body.image,
     description: req.body.description,
     views: "0",
     likes: "0",

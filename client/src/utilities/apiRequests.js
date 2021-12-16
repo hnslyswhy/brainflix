@@ -63,13 +63,15 @@ export const deleteComment = async function deleteAComment(videoId, commentId) {
 export const uploadVideo = async function uploadAVideo(
   videoTitle,
   videoDescription,
-  videoFile
+  videoFile,
+  videoImage
 ) {
   try {
     await axios.post(`${process.env.REACT_APP_SERVER_URL}/videos`, {
       title: videoTitle,
       description: videoDescription,
       video: videoFile,
+      image: videoImage,
     });
   } catch (e) {
     console.log(e);

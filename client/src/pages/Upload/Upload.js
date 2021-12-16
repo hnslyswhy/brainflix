@@ -19,7 +19,8 @@ const Upload = (props) => {
     uploadVideo(
       e.target.title.value,
       e.target.description.value,
-      "https://project-2-api.herokuapp.com/stream"
+      "https://project-2-api.herokuapp.com/stream",
+      "http://localhost:8080/images/upload-video-preview.jpg"
     );
     alert("uploaded");
     props.history.push("/");
