@@ -5,7 +5,7 @@ import "./Upload.scss";
 const Upload = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    const reader = new FileReader();
+    /*     const reader = new FileReader();
     reader.onload = function () {
       console.log(reader.result);
       uploadVideo(
@@ -14,9 +14,13 @@ const Upload = (props) => {
         reader.result
       );
     };
-    reader.readAsText(e.target.file.files[0]);
-
+    reader.readAsText(e.target.file.files[0]); */
     //files are handled differently,  console.log(e.target.file.files[0]) to see
+    uploadVideo(
+      e.target.title.value,
+      e.target.description.value,
+      "https://project-2-api.herokuapp.com/stream"
+    );
     alert("uploaded");
     props.history.push("/");
   };

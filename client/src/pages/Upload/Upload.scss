@@ -111,10 +111,11 @@
     & #title {
       width: 100%;
       margin-top: variables.$pm-base;
-      &::placeholder {
+      /*       &::placeholder {
         @include mixin.mobil-body-copy;
+        font-family: "Avenir", serif;
         color: variables.$primary-black;
-      }
+      } */
     }
 
     & #description {
@@ -125,10 +126,11 @@
       resize: none;
       margin-top: variables.$pm-base;
 
-      &::placeholder {
+      /*       &::placeholder {
         @include mixin.mobil-body-copy;
+        font-family: "Avenir", serif;
         color: variables.$primary-black;
-      }
+      } */
 
       @include mixin.tablet {
         height: 10vw;

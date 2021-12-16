@@ -32,19 +32,19 @@
     @include mixin.tablet {
       width: 40%;
       height: 8.5vw;
-      min-width: 110px;
-      max-width: 220x;
-      min-height: 60px;
-      max-height: 100px;
+      min-width: 6.875rem;
+      max-width: 13.75rem;
+      min-height: 3.75rem;
+      max-height: 6.25rem;
     }
 
     @include mixin.desktop {
       width: 28%;
       height: 5vw;
-      min-width: 100px;
+      min-width: 6.25rem;
       max-width: 200x;
-      min-height: 65px;
-      max-height: 100px;
+      min-height: 4.0625rem;
+      max-height: 6.25rem;
     }
   }
 

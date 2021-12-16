@@ -34,10 +34,16 @@ class Main extends Component {
   setVideos = () => {
     const targetId = this.props.match.params.videoId;
     let fetchId = targetId ? targetId : this.state.videoList[0].id;
-    getOne(fetchId).then((res) => {
-      this.setState({ selectedVideo: res, loading: false });
-      window.scrollTo(0, 0);
-    });
+    getOne(fetchId)
+      .then((res) => {
+        this.setState({ selectedVideo: res, loading: false });
+        window.scrollTo(0, 0);
+      })
+      .catch((e) => {
+        console.log(this.props.history);
+        alert("something went wrong");
+        this.props.history.goBack();
+      });
   };
 
   handleTogglePlayBtn = () => {
@@ -93,7 +99,7 @@ class Main extends Component {
                 src={
                   this.state.selectedVideo.video.includes("herokuapp")
                     ? this.state.selectedVideo.video +
-                      "?api_key=1ed2cf28-7c6c-4c8b-a0ae-c084fb998fb1"
+                      `?api_key=${process.env.REACT_APP_API_KEY}`
                     : this.state.selectedVideo.video
                 }
                 poster={selectedVideo.image}

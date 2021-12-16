@@ -34,7 +34,7 @@
     max-height: 8rem;
     position: relative;
     margin-bottom: variables.$pm-base * 4;
-    margin-top: 4px;
+    margin-top: 0.25rem;
 
     @include mixin.tablet {
       height: 2.5rem;

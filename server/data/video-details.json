@@ -301,55 +301,16 @@
     "id": "76ca28c0-7dea-4553-887f-8e5129a80fc3"
   },
   {
-    "title": "trial",
+    "title": "ppp",
     "channel": "",
     "image": "http://localhost:8080/images/upload-video-preview.jpg",
-    "description": "this is a trial of uploading video file",
+    "description": "pppp",
     "views": "0",
     "likes": "0",
     "duration": "",
-    "video": "C:\\fakepath\\BrainStation.mp4",
-    "timestamp": 1639587964896,
+    "video": "https://project-2-api.herokuapp.com/stream",
+    "timestamp": 1639625079549,
     "comments": [],
-    "id": "c0b6d60b-cf15-495c-8da0-08f010639175"
-  },
-  {
-    "title": "ddd",
-    "channel": "",
-    "image": "http://localhost:8080/images/upload-video-preview.jpg",
-    "description": "ddddd",
-    "views": "0",
-    "likes": "0",
-    "duration": "",
-    "video": "C:\\fakepath\\BrainStation.mp4",
-    "timestamp": 1639615934516,
-    "comments": [],
-    "id": "42aef61d-0464-469d-9334-c082d94f340d"
-  },
-  {
-    "title": "lalala",
-    "channel": "",
-    "image": "http://localhost:8080/images/upload-video-preview.jpg",
-    "description": "lalalalal",
-    "views": "0",
-    "likes": "0",
-    "duration": "",
-    "video": {},
-    "timestamp": 1639616535641,
-    "comments": [],
-    "id": "044cbaa6-dd83-4392-8c17-b9d2766d4345"
-  },
-  {
-    "title": "lalal",
-    "channel": "",
-    "image": "http://localhost:8080/images/upload-video-preview.jpg",
-    "description": "kkkk",
-    "views": "0",
-    "likes": "0",
-    "duration": "",
-    "video": {},
-    "timestamp": 1639616925143,
-    "comments": [],
-    "id": "c376e7b5-5ac4-4299-9734-611642f9dba8"
+    "id": "e9bfb8e9-d3b0-4d10-88c3-a6143bdff6db"
   }
 ]
