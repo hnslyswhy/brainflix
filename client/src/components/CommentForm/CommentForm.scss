@@ -6,7 +6,7 @@
   width: 100%;
 
   @include mixin.tablet {
-    @include mixin.flexbox(row, space-between, flex-end);
+    @include mixin.flexbox(row, space-between, flex-start);
   }
 
   @include mixin.desktop {
@@ -59,6 +59,7 @@
 
     @include mixin.tablet {
       width: 25%;
+      margin-top: variables.$pm-base * 6;
     }
 
     @include mixin.desktop {

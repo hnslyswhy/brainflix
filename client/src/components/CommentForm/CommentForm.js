@@ -17,7 +17,7 @@ function CommentForm({ video, setVideos }) {
         <label className="comment-form__label" htmlFor="comment">
           JOIN THE CONVERSATION
         </label>
-        <input
+        <textarea
           className="comment-form__input"
           id="comment"
           type="text"

@@ -19,6 +19,7 @@ class Main extends React.Component {
       playing: false,
       full: false,
       mute: false,
+      durationSeconds: 0,
       duration: "0:00",
       elapse: "0:00",
       currentTime: "0",
@@ -53,6 +54,7 @@ class Main extends React.Component {
 
   handleMetaData = () => {
     this.setState({
+      durationSeconds: this.videoRef.current.duration,
       duration: getVideoTime(this.videoRef.current.duration),
       elapse: getVideoTime(this.videoRef.current.currentTime),
       currentTime: this.videoRef.current.currentTime,
@@ -66,6 +68,12 @@ class Main extends React.Component {
       currentTime: this.videoRef.current.currentTime,
     });
     console.log(this.videoRef.current.currentTime);
+  };
+
+  handleSeek = (event) => {
+    let seekTime = parseInt(event.target.value);
+    this.setState({ currentTime: seekTime });
+    this.videoRef.current.currentTime = seekTime;
   };
 
   handleTogglePlayBtn = () => {
@@ -157,9 +165,10 @@ class Main extends React.Component {
                     id="seek"
                     value={Math.floor(this.state.currentTime)}
                     min="0"
-                    max={this.state.duration}
+                    max={this.state.durationSeconds}
                     type="range"
-                    step=""
+                    step="1"
+                    onChange={this.handleSeek}
                   ></input>
                   <div className="time">
                     <time id="time-elapsed">{this.state.elapse}</time>

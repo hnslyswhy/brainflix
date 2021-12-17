@@ -1,5 +1,6 @@
 @use "./variables";
 @use "./mixin";
+@use "./typography";
 
 * {
   margin: 0;
@@ -39,6 +40,7 @@ label {
 input,
 textarea {
   border-radius: 4px;
+  font-family: inherit;
   border: 1px solid variables.$secondary-mercury;
   background-color: variables.$secondary-alabaster;
   min-width: 15rem;
@@ -52,6 +54,7 @@ textarea {
   }
 
   &::placeholder {
+    font-family: inherit;
     @include mixin.mobil-body-copy;
     color: variables.$primary-black;
   }
