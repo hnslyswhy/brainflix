@@ -2,11 +2,12 @@ const express = require("express");
 const { v4: uuidv4 } = require("uuid");
 const videoData = require("../data/video-details.json");
 const fs = require("fs");
-const fileUpLoad = require("express-fileupload");
+// for receiving and saving uploaded image
+const multer = require("multer");
+const upload = multer({ dest: "./public/uploads" });
 
 const videoRouter = express.Router();
 const app = express();
-app.use(fileUpLoad());
 
 //delete comment
 videoRouter.delete("/:videoId/comments/:commentId", (req, res) => {
@@ -58,29 +59,25 @@ videoRouter.get("/:id", (req, res) => {
 });
 
 //post new video
-videoRouter.post("/", (req, res) => {
+videoRouter.post("/", upload.single("image"), (req, res) => {
+  const formData = req.body;
+  const image = req.file;
   if (
     !req.body.title ||
     !req.body.description ||
     !req.body.video ||
-    !req.files
+    !req.file
   ) {
+    console.log(req.data);
     return res
       .status(400)
       .json({ message: "please include title, description, and video" });
   }
-  const file = req.files.file;
-  // move file to the path specified in front end
-  file.mv(`${__dirname}/client/src/public/uploads/${file.name}`, (err) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send(err);
-    }
-  });
+  const file = req.file;
   const newVideo = {
     title: req.body.title,
     channel: "",
-    image: `/uploads/${file.name}`,
+    image: `http://localhost:8080/uploads/${file.filename}`,
     description: req.body.description,
     views: "0",
     likes: "0",
@@ -89,6 +86,7 @@ videoRouter.post("/", (req, res) => {
     timestamp: Date.now(),
     comments: [],
     id: uuidv4(),
+    mimetype: file.mimetype,
   };
   let allVideos = videoData;
   allVideos.push(newVideo);

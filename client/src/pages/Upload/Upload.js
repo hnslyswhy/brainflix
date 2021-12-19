@@ -4,7 +4,6 @@ import "./Upload.scss";
 
 const Upload = (props) => {
   const [file, setFile] = useState(" ");
-  //const [fileName, serFileName] = useState("")
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -14,17 +13,6 @@ const Upload = (props) => {
     e.preventDefault();
     // converted video to string, but size still to large for server side
     //files are handled differently,  console.log(e.target.file.files[0]) to see
-    /*     const reader = new FileReader();
-    reader.onload = function () {
-      console.log(reader.result);
-      uploadVideo(
-        e.target.title.value,
-        e.target.description.value,
-        reader.result
-      );
-    };
-    reader.readAsText(e.target.file.files[0]); */
-    // append image to form data
     const formData = new FormData();
     formData.append("file", file);
 

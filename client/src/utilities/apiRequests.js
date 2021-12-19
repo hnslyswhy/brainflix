@@ -60,6 +60,8 @@ export const deleteComment = async function deleteAComment(videoId, commentId) {
   return data;
 };
 
+// video is just a hardcoded path, but the selected image will be uploaded properly.
+// axios here send form-data type instead of json
 export const uploadVideo = async function uploadAVideo(
   videoTitle,
   videoDescription,
@@ -67,26 +69,16 @@ export const uploadVideo = async function uploadAVideo(
   videoImage
 ) {
   try {
-    // test
     let formData = new FormData();
     formData.append("title", videoTitle);
     formData.append("description", videoDescription);
     formData.append("video", videoFile);
     formData.append("image", videoImage);
-    await axios.post(
-      `${process.env.REACT_APP_SERVER_URL}/videos`,
-      {
-        title: videoTitle,
-        description: videoDescription,
-        video: videoFile,
-        image: videoImage,
+    await axios.post(`${process.env.REACT_APP_SERVER_URL}/videos`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
       },
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
+    });
   } catch (e) {
     console.log(e);
     alert("something went wrong");
