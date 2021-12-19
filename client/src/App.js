@@ -6,19 +6,17 @@ import "./App.scss";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <PageHeader />
-        <Switch>
-          <Route path="/" exact component={Main} />
-          <Route path="/video/:videoId" component={Main} />
-          <Route path="/upload" component={Upload} />
-          <Route path="*">
-            <Redirect to="/" />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <PageHeader />
+      <Switch>
+        <Route path="/" exact component={Main} />
+        <Route path="/video/:videoId" component={Main} />
+        <Route path="/upload" component={Upload} />
+        <Route path="*">
+          <Redirect to="/" />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 

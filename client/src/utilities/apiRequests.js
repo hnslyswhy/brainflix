@@ -1,12 +1,10 @@
 import axios from "axios";
-const key = "1ed2cf28-7c6c-4c8b-a0ae-c084fb998fb1";
-const baseUrl = "https://project-2-api.herokuapp.com";
 
 export const getAll = async function getList() {
   let response;
   let data;
   try {
-    response = await axios.get(`${baseUrl}/videos?api_key=${key}`);
+    response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/videos`);
     data = response.data;
   } catch (e) {
     console.log(e);
@@ -18,7 +16,9 @@ export const getAll = async function getList() {
 export const getOne = async function getDetails(id) {
   let data;
   try {
-    let response = await axios.get(`${baseUrl}/videos/${id}?api_key=${key}`);
+    let response = await axios.get(
+      `${process.env.REACT_APP_SERVER_URL}/videos/${id}`
+    );
     data = response.data;
   } catch (e) {
     console.log(e);
@@ -33,10 +33,32 @@ export const postComment = async function postAComment(
   userComment
 ) {
   try {
-    await axios.post(`${baseUrl}/videos/${id}/comments?api_key=${key}`, {
-      name: userName,
-      comment: userComment,
-    });
+    await axios.post(
+      `${process.env.REACT_APP_SERVER_URL}/videos/${id}/comments`,
+      {
+        name: userName,
+        comment: userComment,
+      }
+    );
+  } catch (e) {
+    console.log(e);
+    alert("something went wrong");
+  }
+};
+
+export const patchLike = async function changeVideoLikes(id, likes) {
+  try {
+    await axios.patch(
+      `${process.env.REACT_APP_SERVER_URL}/videos/${id}`,
+      {
+        likes: likes,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   } catch (e) {
     console.log(e);
     alert("something went wrong");
@@ -47,7 +69,7 @@ export const deleteComment = async function deleteAComment(videoId, commentId) {
   let data;
   try {
     let response = await axios.delete(
-      `${baseUrl}/videos/${videoId}/comments/${commentId}?api_key=${key}`
+      `${process.env.REACT_APP_SERVER_URL}/videos/${videoId}/comments/${commentId}`
     );
     data = response.data;
   } catch (e) {
@@ -55,4 +77,29 @@ export const deleteComment = async function deleteAComment(videoId, commentId) {
     alert("something went wrong");
   }
   return data;
+};
+
+// video is just a hardcoded path, but the selected image will be uploaded properly.
+// axios here send form-data type instead of json
+export const uploadVideo = async function uploadAVideo(
+  videoTitle,
+  videoDescription,
+  videoFile,
+  videoImage
+) {
+  try {
+    let formData = new FormData();
+    formData.append("title", videoTitle);
+    formData.append("description", videoDescription);
+    formData.append("video", videoFile);
+    formData.append("image", videoImage);
+    await axios.post(`${process.env.REACT_APP_SERVER_URL}/videos`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  } catch (e) {
+    console.log(e);
+    alert("something went wrong");
+  }
 };

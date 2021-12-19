@@ -7,7 +7,7 @@ function CommentForm({ video, setVideos }) {
     postComment(video.id, "someone", e.target.comment.value)
       .then((res) => {
         e.target.reset();
-        setVideos(); //react context
+        setVideos(); //or use react context
       })
       .catch((e) => console.log(e.message));
   };
@@ -17,7 +17,7 @@ function CommentForm({ video, setVideos }) {
         <label className="comment-form__label" htmlFor="comment">
           JOIN THE CONVERSATION
         </label>
-        <input
+        <textarea
           className="comment-form__input"
           id="comment"
           type="text"

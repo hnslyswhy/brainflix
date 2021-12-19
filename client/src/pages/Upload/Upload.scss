@@ -1,5 +1,6 @@
 @use "../../styles/partials/variables";
 @use "../../styles/partials/mixin";
+@use "../../styles/partials/global";
 
 .upload {
   padding: variables.$pm-base * 4;
@@ -72,10 +73,11 @@
         min-height: 11.3rem;
         max-height: 20rem;
       }
-
-      & #file {
-        visibility: hidden;
-      }
+    }
+    #file {
+      visibility: hidden;
+      width: 100%;
+      height: 100%;
     }
 
     &__entries {
@@ -109,10 +111,6 @@
     & #title {
       width: 100%;
       margin-top: variables.$pm-base;
-      &::placeholder {
-        @include mixin.mobil-body-copy;
-        color: variables.$primary-black;
-      }
     }
 
     & #description {
@@ -122,11 +120,6 @@
       min-height: 4rem;
       resize: none;
       margin-top: variables.$pm-base;
-
-      &::placeholder {
-        @include mixin.mobil-body-copy;
-        color: variables.$primary-black;
-      }
 
       @include mixin.tablet {
         height: 10vw;
