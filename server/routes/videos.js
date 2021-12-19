@@ -51,6 +51,18 @@ videoRouter.post("/:id/comments", (req, res) => {
   }
 });
 
+//change like counts
+videoRouter.patch("/:id", (req, res) => {
+  const targetId = req.params.id;
+  const targetVideo = videoData.find((video) => video.id === targetId);
+  if (targetVideo) {
+    targetVideo.likes = req.body.likes;
+    res.status(200).send(targetVideo);
+  } else {
+    res.status(404).json({ message: "video not found" });
+  }
+});
+
 //get video by id
 videoRouter.get("/:id", (req, res) => {
   const targetId = req.params.id;

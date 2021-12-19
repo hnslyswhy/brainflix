@@ -88,6 +88,14 @@
     color: variables.$primary-silver;
   }
 
+  &__like-img {
+    cursor: pointer;
+    &:hover,
+    &:active {
+      transform: scale(1.2);
+    }
+  }
+
   &__text {
     @include mixin.mobil-body-copy;
 

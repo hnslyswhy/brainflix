@@ -17,7 +17,6 @@ class Main extends React.Component {
       redirect: false,
       loading: true,
       playing: false,
-      full: false,
       mute: false,
       durationSeconds: 0,
       duration: "0:00",
@@ -47,7 +46,6 @@ class Main extends React.Component {
       })
       .catch((e) => {
         alert("something went wrong");
-        // this.setState({redirect:true})
         this.props.history.goBack();
       });
   };
@@ -66,7 +64,6 @@ class Main extends React.Component {
       elapse: getVideoTime(this.videoRef.current.currentTime),
       currentTime: this.videoRef.current.currentTime,
     });
-    console.log(this.videoRef.current.currentTime);
   };
 
   handleSeek = (event) => {
@@ -77,11 +74,12 @@ class Main extends React.Component {
 
   handleTogglePlayBtn = () => {
     this.setState({ playing: !this.state.playing });
-    //  console.log(this.state.playing);
     if (this.videoRef.current.paused || this.videoRef.current.ended) {
       this.videoRef.current.play();
+      this.setState({ playing: true });
     } else {
       this.videoRef.current.pause();
+      this.setState({ playing: false }); //after complete, does not reset the play btn
     }
   };
 
@@ -92,7 +90,6 @@ class Main extends React.Component {
     } else {
       this.videoRef.current.exitFullscreen();
     }
-    console.log(this.state.full);
   };
 
   handleToggleMuteBtn = () => {
@@ -150,16 +147,14 @@ class Main extends React.Component {
               <div className="main__video-controls">
                 <button
                   id="play"
-                  className={`${this.state.playing} ?  main__video-play :  main__video-pause`}
+                  className={
+                    this.state.playing
+                      ? "main__video-play"
+                      : "main__video-pause"
+                  }
                   onClick={this.handleTogglePlayBtn}
                 ></button>
                 <div className="main__video-bar">
-                  <progress
-                    id="progress"
-                    value={Math.floor(this.state.currentTime)}
-                    min="0"
-                    max={this.state.duration}
-                  ></progress>
                   <input
                     id="seek"
                     value={Math.floor(this.state.currentTime)}
@@ -168,7 +163,14 @@ class Main extends React.Component {
                     type="range"
                     step="1"
                     onChange={this.handleSeek}
-                  ></input>
+                  ></input>{" "}
+                  {/* 
+                  <progress
+                    id="progress"
+                    value={Math.floor(this.state.currentTime)}
+                    min="0"
+                    max={this.state.duration}
+                  ></progress> */}
                   <div className="time">
                     <time id="time-elapsed">{this.state.elapse}</time>
                     <span> / </span>
@@ -178,12 +180,17 @@ class Main extends React.Component {
                 <div className="main__video-other">
                   <button
                     id="full"
-                    className={`${this.state.full} ?  main__video-full :  main__video-min`}
+                    className="main__video-min"
+                    /*  className={
+                      this.state.full ? "main__video-full" : "main__video-min"
+                    } */
                     onClick={this.handleToggleFullBtn}
                   ></button>
                   <button
                     id="mute"
-                    className={`${this.state.mute} ?  main__video-mute :  main__video-up`}
+                    className={
+                      this.state.mute ? "main__video-up" : "main__video-mute"
+                    }
                     onClick={this.handleToggleMuteBtn}
                   ></button>
                   {/*   <input

@@ -46,6 +46,25 @@ export const postComment = async function postAComment(
   }
 };
 
+export const patchLike = async function changeVideoLikes(id, likes) {
+  try {
+    await axios.patch(
+      `${process.env.REACT_APP_SERVER_URL}/videos/${id}`,
+      {
+        likes: likes,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  } catch (e) {
+    console.log(e);
+    alert("something went wrong");
+  }
+};
+
 export const deleteComment = async function deleteAComment(videoId, commentId) {
   let data;
   try {
