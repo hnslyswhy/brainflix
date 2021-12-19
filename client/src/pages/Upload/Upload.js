@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react"; // hook is for exploring how to upload a real image
 import { uploadVideo } from "../../utilities/apiRequests";
 import "./Upload.scss";
 
 const Upload = (props) => {
+  const [file, setFile] = useState(" ");
+  //const [fileName, serFileName] = useState("")
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    // converted video to string, but size still to large for server side
+    //files are handled differently,  console.log(e.target.file.files[0]) to see
     /*     const reader = new FileReader();
     reader.onload = function () {
       console.log(reader.result);
@@ -15,12 +24,15 @@ const Upload = (props) => {
       );
     };
     reader.readAsText(e.target.file.files[0]); */
-    //files are handled differently,  console.log(e.target.file.files[0]) to see
+    // append image to form data
+    const formData = new FormData();
+    formData.append("file", file);
+
     uploadVideo(
       e.target.title.value,
       e.target.description.value,
       "https://project-2-api.herokuapp.com/stream",
-      "http://localhost:8080/images/upload-video-preview.jpg"
+      file
     );
     alert("uploaded");
     props.history.push("/");
@@ -40,7 +52,12 @@ const Upload = (props) => {
               VIDEO THUMBNAIL
               <div className="form__file"></div>
             </label>
-            <input id="file" type="file" name="file"></input>
+            <input
+              id="file"
+              type="file"
+              name="file"
+              onChange={handleFileChange}
+            ></input>
           </div>
 
           <div className="form__entries">

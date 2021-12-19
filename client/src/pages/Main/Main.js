@@ -59,7 +59,6 @@ class Main extends React.Component {
       elapse: getVideoTime(this.videoRef.current.currentTime),
       currentTime: this.videoRef.current.currentTime,
     });
-    console.log(this.videoRef.current.currentTime);
   };
 
   handleTimeUpdate = () => {

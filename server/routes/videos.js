@@ -2,8 +2,11 @@ const express = require("express");
 const { v4: uuidv4 } = require("uuid");
 const videoData = require("../data/video-details.json");
 const fs = require("fs");
+const fileUpLoad = require("express-fileupload");
 
 const videoRouter = express.Router();
+const app = express();
+app.use(fileUpLoad());
 
 //delete comment
 videoRouter.delete("/:videoId/comments/:commentId", (req, res) => {
@@ -40,7 +43,6 @@ videoRouter.post("/:id/comments", (req, res) => {
   };
   const targetVideo = videoData.find((video) => video.id === targetId);
   if (targetVideo) {
-    // do we need to write on the file to make changes survive server restart
     targetVideo.comments = [newComment, ...targetVideo.comments];
     res.status(200).send(newComment);
   } else {
@@ -57,26 +59,28 @@ videoRouter.get("/:id", (req, res) => {
 
 //post new video
 videoRouter.post("/", (req, res) => {
-  console.log(
-    req.body.title,
-    req.body.description,
-    req.body.video,
-    req.body.image
-  );
   if (
     !req.body.title ||
     !req.body.description ||
     !req.body.video ||
-    !req.body.image
+    !req.files
   ) {
     return res
       .status(400)
-      .json({ message: "please include title, description and file" });
+      .json({ message: "please include title, description, and video" });
   }
+  const file = req.files.file;
+  // move file to the path specified in front end
+  file.mv(`${__dirname}/client/src/public/uploads/${file.name}`, (err) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send(err);
+    }
+  });
   const newVideo = {
     title: req.body.title,
     channel: "",
-    image: req.body.image,
+    image: `/uploads/${file.name}`,
     description: req.body.description,
     views: "0",
     likes: "0",

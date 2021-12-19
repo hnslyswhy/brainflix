@@ -67,12 +67,26 @@ export const uploadVideo = async function uploadAVideo(
   videoImage
 ) {
   try {
-    await axios.post(`${process.env.REACT_APP_SERVER_URL}/videos`, {
-      title: videoTitle,
-      description: videoDescription,
-      video: videoFile,
-      image: videoImage,
-    });
+    // test
+    let formData = new FormData();
+    formData.append("title", videoTitle);
+    formData.append("description", videoDescription);
+    formData.append("video", videoFile);
+    formData.append("image", videoImage);
+    await axios.post(
+      `${process.env.REACT_APP_SERVER_URL}/videos`,
+      {
+        title: videoTitle,
+        description: videoDescription,
+        video: videoFile,
+        image: videoImage,
+      },
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
   } catch (e) {
     console.log(e);
     alert("something went wrong");
